@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ChangeController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="2.0" fill="#d3d7db" height="50.0" stroke="#737577" strokeType="INSIDE" width="900.0" />
+      <Label layoutX="67.0" layoutY="15.0" text="Change Username or Password">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="oldUserField" layoutX="196.0" layoutY="98.0" prefWidth="200.0" />
+      <Label layoutX="67.0" layoutY="102.0" text="Old Username*">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="147.0" text="Old Password*">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="oldPassField" layoutX="196.0" layoutY="144.0" prefWidth="200.0" />
+      <Label layoutX="67.0" layoutY="226.0" text="New Username">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="newUserField" layoutX="196.0" layoutY="223.0" prefWidth="200.0" />
+      <Label layoutX="67.0" layoutY="296.0" text="New Password">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="newPassField" layoutX="196.0" layoutY="292.0" prefWidth="200.0" />
+      <Label fx:id="retypePassLabel" layoutX="67.0" layoutY="393.0" text="Retype Password">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="newPass2Field" layoutX="196.0" layoutY="390.0" prefWidth="200.0" />
+      <Button fx:id="doneButton" alignment="CENTER" layoutX="450.0" layoutY="493.0" mnemonicParsing="false" onAction="#doneChanging" style="-fx-background-color: #3e2dd4;" text="Done" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Text fill="#bd1414" layoutX="67.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fields ending with &quot; * &quot; must not be left empty!">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="67.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retype new password if you've entered a new one">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Label fx:id="wrongLabel" layoutX="201.0" layoutY="180.0" text="Wrong username or password!" textFill="#ea0808" visible="false" />
+      <Label fx:id="takenLabel" layoutX="201.0" layoutY="256.0" text="This Username is already taken!" textFill="#ea0808" visible="false" />
+      <Label fx:id="matchLabel" layoutX="201.0" layoutY="427.0" text="New passwords don't match!" textFill="#ea0808" visible="false" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#goToLastPage" text="Back" />
+      <Label fx:id="blackCharLabel" layoutX="196.0" layoutY="324.0" text="- Password must be atleast 6 characters">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="redCharLabel" layoutX="196.0" layoutY="325.0" text="- Password must be atleast 6 characters" textFill="#ea0808" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
