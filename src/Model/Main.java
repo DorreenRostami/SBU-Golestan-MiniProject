@@ -3,6 +3,9 @@ package Model;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main extends Application {
 
     @Override
@@ -14,6 +17,13 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         PageLoader.initStage(primaryStage);
         new PageLoader().loadScene("/View/SignIn.fxml");
+//        List<Student> studentList = new ArrayList<>();
+//        Make ms = new Make();
+//        ms.makeStudent("ali", "alavi", studentList);
+//        ms.makeStudent("vali", "valavi", studentList);
+//        ms.makeStudent("taghi", "taghavi", studentList);
+//        StudentFileStream ss = new StudentFileStream();
+//        ss.write(studentList, "Resources/Files/students");
     }
 
     @Override

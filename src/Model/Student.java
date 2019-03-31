@@ -7,7 +7,7 @@ import java.util.List;
 public class Student implements Serializable {
     private String username;
     private String password;
-    private long balance;
+    private long balance = 0;
     private int GPA = 20;
     //private List<Course> COURSES_TAKEN = new ArrayList<>();
 

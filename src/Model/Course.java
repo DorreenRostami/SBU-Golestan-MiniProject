@@ -8,4 +8,5 @@ public class Course {
 
     public int unit;
     public String name;
+    public List<Student> STUDENTS_TAKING_COURSE = new ArrayList<>();
 }

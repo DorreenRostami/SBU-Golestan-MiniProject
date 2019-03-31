@@ -5,10 +5,12 @@ import java.util.*;
 
 public class Admin {
     private Scanner scn;
+    private Formatter frmtr;
+    private File file = new File("Resources/Files/admin.txt");
 
     {
         try {
-            scn = new Scanner(new File("Resources/Files/admin.txt"));
+            scn = new Scanner(file, "utf-8");
         } catch (FileNotFoundException e) {
             System.out.println("file not found");
         }
@@ -23,6 +25,7 @@ public class Admin {
     }
 
     public void setUsername(String username) {
+
         this.username = username;
     }
 
