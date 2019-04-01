@@ -6,10 +6,15 @@ import java.util.List;
 
 public class Student implements Serializable {
     private String username;
-    private String password;
+    private String password = "123456";
     private long balance = 0;
     private int GPA = 20;
+    private int courseCount = 0;
     //private List<Course> COURSES_TAKEN = new ArrayList<>();
+
+    public Student(String username){
+        this.username = username;
+    }
 
     public String getUsername() {
         return username;
@@ -41,5 +46,13 @@ public class Student implements Serializable {
 
     public void setGPA(int GPA) {
         this.GPA = GPA;
+    }
+
+    public int getCourseCount() {
+        return courseCount;
+    }
+
+    public void setCourseCount(int courseCount) {
+        this.courseCount = courseCount;
     }
 }

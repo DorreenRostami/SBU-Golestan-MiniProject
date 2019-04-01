@@ -2,6 +2,8 @@ package Controller;
 
 import Model.Admin;
 import Model.PageLoader;
+import Model.Student;
+import Model.StudentFileStream;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +12,7 @@ import javafx.util.Duration;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 
 public class SignInController {
     @FXML
@@ -25,17 +28,31 @@ public class SignInController {
     @FXML
     private Hyperlink changeHyperlink;
 
-    Admin admin = new Admin();
-
     public void initialize(){playTransitions();}
 
-    public void signIn(ActionEvent actionEvent) {
+    public void signIn(ActionEvent actionEvent) throws IOException {
+        Admin admin = new Admin();
+        boolean signedIn = false;
         if(usernameField.getText().equals(admin.getUsername()) &&
                 (passwordField.getText().equals(admin.getPassword()) || visiblePasswordField.getText().equals(admin.getPassword()))) {
             wrongLabel.setVisible(false);
-            System.out.println("page change");
+            signedIn = true;
+            new PageLoader().loadScene("/View/FoodSelecting.fxml");
         }
-        else
+        else {
+            StudentFileStream sfs = new StudentFileStream();
+            List<Student> studentList = sfs.read();
+            forloop: for (Student s: studentList) {
+                if (usernameField.getText().equals(s.getUsername()) &&
+                        (passwordField.getText().equals(s.getPassword()) || visiblePasswordField.getText().equals(s.getPassword()))) {
+                    wrongLabel.setVisible(false);
+                    System.out.println("page change");
+                    signedIn = true;
+                    break forloop;
+                }
+            }
+        }
+        if(!signedIn)
             wrongLabel.setVisible(true);
     }
 

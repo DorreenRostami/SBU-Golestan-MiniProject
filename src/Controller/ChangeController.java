@@ -19,10 +19,9 @@ public class ChangeController {
     @FXML
     private Label wrongLabel, takenLabel, matchLabel, blackCharLabel, redCharLabel;
 
-    Admin admin = new Admin();
-
     public void doneChanging(ActionEvent actionEvent) throws IOException {
         if(actionEvent.getSource() == doneButton) {
+            Admin admin = new Admin();
             if (oldUserField.getText().equals(admin.getUsername()) && oldPassField.getText().equals(admin.getPassword()))
                 wrongLabel.setVisible(false);
             else
@@ -63,6 +62,6 @@ public class ChangeController {
 
     public void goToLastPage(ActionEvent actionEvent) throws IOException {
         if(actionEvent.getSource() == backButton)
-            new PageLoader().loadScene("View/SignIn.fxml");
+            new PageLoader().loadScene("/View/SignIn.fxml");
     }
 }

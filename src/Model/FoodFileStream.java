@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class StudentFileStream {
-    public void write(List<Student> list) {
+public class FoodFileStream {
+    public void write(List<Food> list, String file) {
         ObjectOutputStream out = null;
         try {
-            out = new ObjectOutputStream(new FileOutputStream("Resources/Files/students"));
-            for (Student s : list)
-                out.writeObject(s);
+            out = new ObjectOutputStream(new FileOutputStream(file));
+            for (Food f : list)
+                out.writeObject(f);
         } catch (IOException e) {
             System.out.println("error opening file");
         } catch (NoSuchElementException e) {
@@ -27,21 +27,21 @@ public class StudentFileStream {
         }
     }
 
-    public List<Student> read() {
-        List<Student> list = new ArrayList<>();
+    public List<Food> read(String file) {
+        List<Food> list = new ArrayList<>();
         ObjectInputStream input = null;
         try {
-            input = new ObjectInputStream(new FileInputStream("Resources/Files/students"));
+            input = new ObjectInputStream(new FileInputStream(file));
             while (true) {
-                Student s = (Student) input.readObject();
-                list.add(s);
+                Food f = (Food) input.readObject();
+                list.add(f);
             }
         } catch (EOFException e) {
             return list;
         } catch (ClassNotFoundException e) {
             System.out.println("class not found");
         }catch (IOException e) {
-            System.out.println("error opening file.");
+            System.out.println("error opening file." + e.toString());
         } finally {
             try {
                 if(input != null)

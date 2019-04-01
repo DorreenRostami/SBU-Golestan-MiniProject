@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FoodSelectingController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#c5c4c4" height="50.0" stroke="#575656" strokeType="INSIDE" width="900.0" />
+      <Text layoutX="717.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="برنامه غذایی هفته">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="backButton" layoutX="839.0" layoutY="12.0" mnemonicParsing="false" text="Back" />
+      <VBox layoutX="667.0" layoutY="115.0" prefHeight="50.0" prefWidth="50.0">
+         <children>
+            <TextField fx:id="shanbeField1" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
+            <TextField fx:id="shanbeField2" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
+         </children>
+      </VBox>
+      <Text layoutX="307.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شماره غذای مورد نظر را در جعبه رو به روی روز آن وارد کنید" />
+      <Text layoutX="754.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شنبه">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <VBox layoutX="667.0" layoutY="185.0" prefHeight="50.0" prefWidth="50.0">
+         <children>
+            <TextField fx:id="yekshanbeField1" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
+            <TextField fx:id="yekshanbeField2" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
+         </children>
+      </VBox>
+      <Text layoutX="748.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="یکشنبه">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <VBox layoutX="667.0" layoutY="255.0" prefHeight="50.0" prefWidth="50.0">
+         <children>
+            <TextField fx:id="doshanbeField1" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
+            <TextField fx:id="doshanbeField2" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="667.0" layoutY="325.0" prefHeight="50.0" prefWidth="50.0">
+         <children>
+            <TextField fx:id="seshanbeField1" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
+            <TextField fx:id="seshanbeField2" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="667.0" layoutY="395.0" prefHeight="50.0" prefWidth="50.0">
+         <children>
+            <TextField fx:id="chaharshanbeField1" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
+            <TextField fx:id="chaharshanbeField2" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
+         </children>
+      </VBox>
+      <Text layoutX="746.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="دوشنبه">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="743.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="سه شنبه">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="741.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="چهارشنبه">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextArea editable="false" layoutX="66.0" layoutY="115.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="330.0" prefWidth="200.0" text="1- قورمه سبزی&#10;2- شنینسل&#10;3- قیمه&#10;4- قیمه بادمجان&#10;5- ماکارونی&#10;6- ناگت&#10;7- کباب کوبیده&#10;8- جوجه کباب&#10;9- زرشک پلو مرغ&#10;10- عدس پلو&#10;11- ماهی تن&#10;12- ماهی قزل آلا">
+         <font>
+            <Font size="15.0" />
+         </font></TextArea>
+      <Button fx:id="doneButton" layoutX="502.0" layoutY="537.0" mnemonicParsing="false" onAction="#doneSelectingFood" style="-fx-background-color: #3e2dd4;" text="ذخیره تغییرات و بازگشت به صفحه اصلی" textFill="WHITE" />
+   </children>
+</AnchorPane>
