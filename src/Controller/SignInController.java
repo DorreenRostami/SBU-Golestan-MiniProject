@@ -37,18 +37,18 @@ public class SignInController {
                 (passwordField.getText().equals(admin.getPassword()) || visiblePasswordField.getText().equals(admin.getPassword()))) {
             wrongLabel.setVisible(false);
             signedIn = true;
-            new PageLoader().loadScene("/View/FoodSelecting.fxml");
+            new PageLoader().loadScene("/View/AdminHomePage.fxml");
         }
         else {
             StudentFileStream sfs = new StudentFileStream();
-            List<Student> studentList = sfs.read();
-            forloop: for (Student s: studentList) {
+            List<Student> studentList = sfs.read("Resources/Files/students");
+            for (Student s: studentList) {
                 if (usernameField.getText().equals(s.getUsername()) &&
                         (passwordField.getText().equals(s.getPassword()) || visiblePasswordField.getText().equals(s.getPassword()))) {
                     wrongLabel.setVisible(false);
                     System.out.println("page change");
                     signedIn = true;
-                    break forloop;
+                    break;
                 }
             }
         }

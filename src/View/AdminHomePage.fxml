@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminHomePageController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#c5c4c4" height="50.0" stroke="#575656" strokeType="INSIDE" width="900.0" />
+      <Label layoutX="387.0" layoutY="15.0" text="سيستم جامع دانشگاهي">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Text layoutX="369.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="به صفحه اصلی خود خوش آمدید!" />
+      <Hyperlink fx:id="foods" layoutX="603.0" layoutY="212.0" onAction="#goToFoodsPage" text="آماده کردن برنامه غذایی هفته جاری دانشجویان" />
+      <Hyperlink fx:id="books" layoutX="675.0" layoutY="262.0" onAction="#goToBooksPage" text="بررسی مسائل مربوط به کتابخانه" />
+      <Hyperlink fx:id="students" layoutX="701.0" layoutY="312.0" onAction="#goToStudentsPage" text="مشاهده لیست دانشجویان" />
+      <Hyperlink fx:id="professors" layoutX="714.0" layoutY="362.0" onAction="#goToProfessorsPage" text="مشاهده لیست استادان" />
+      <Hyperlink fx:id="classes" layoutX="653.0" layoutY="412.0" onAction="#goToClassesPage" text="مشاهده لیست کلاس های ارائه شده" />
+      <Text layoutX="683.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تمایل به انجام کدام کار را دارید؟" />
+   </children>
+</AnchorPane>

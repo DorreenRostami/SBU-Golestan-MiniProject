@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class StudentFileStream {
-    public void write(List<Student> list) {
+    public void write(List<Student> list, String file) {
         ObjectOutputStream out = null;
         try {
-            out = new ObjectOutputStream(new FileOutputStream("Resources/Files/students"));
+            out = new ObjectOutputStream(new FileOutputStream(file));
             for (Student s : list)
                 out.writeObject(s);
         } catch (IOException e) {
@@ -27,11 +27,11 @@ public class StudentFileStream {
         }
     }
 
-    public List<Student> read() {
+    public List<Student> read(String file) {
         List<Student> list = new ArrayList<>();
         ObjectInputStream input = null;
         try {
-            input = new ObjectInputStream(new FileInputStream("Resources/Files/students"));
+            input = new ObjectInputStream(new FileInputStream(file));
             while (true) {
                 Student s = (Student) input.readObject();
                 list.add(s);
@@ -42,6 +42,7 @@ public class StudentFileStream {
             System.out.println("class not found");
         }catch (IOException e) {
             System.out.println("error opening file.");
+            System.out.println(e.getMessage());
         } finally {
             try {
                 if(input != null)

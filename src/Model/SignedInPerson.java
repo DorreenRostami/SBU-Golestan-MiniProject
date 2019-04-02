@@ -1,10 +1,13 @@
 package Model;
 
-import Model.Student;
-
 public class SignedInPerson {
-    public Object person;
-    public void set(Object p){
+    private Object person;
+
+    public void setPerson(Object p){
         person = p;
+    }
+
+    public Object getPerson(){
+        return person;
     }
 }

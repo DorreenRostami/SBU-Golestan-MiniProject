@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,7 +18,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Button fx:id="backButton" layoutX="839.0" layoutY="12.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="backButton" layoutX="839.0" layoutY="12.0" mnemonicParsing="false" onAction="#goBackToHomepage" text="Back" />
       <VBox layoutX="667.0" layoutY="115.0" prefHeight="50.0" prefWidth="50.0">
          <children>
             <TextField fx:id="shanbeField1" alignment="CENTER" prefHeight="25.0" prefWidth="100.0" />
@@ -78,6 +79,14 @@
          <font>
             <Font size="15.0" />
          </font></TextArea>
-      <Button fx:id="doneButton" layoutX="502.0" layoutY="537.0" mnemonicParsing="false" onAction="#doneSelectingFood" style="-fx-background-color: #3e2dd4;" text="ذخیره تغییرات و بازگشت به صفحه اصلی" textFill="WHITE" />
+      <Button fx:id="doneButton" layoutX="484.0" layoutY="538.0" mnemonicParsing="false" onAction="#doneSelectingFood" style="-fx-background-color: #3e2dd4;" text="ذخیره تغییرات و بازگشت به صفحه اصلی" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Label fx:id="rangeLabel" layoutX="570.0" layoutY="480.0" text="اعداد باید بین 1 تا 12 باشند!" textFill="#d50c0c" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
