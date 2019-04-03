@@ -1,16 +1,12 @@
 package Controller;
 
-import Model.Admin;
-import Model.PageLoader;
-import Model.Student;
-import Model.StudentFileStream;
+import Model.*;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.Duration;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -37,7 +33,7 @@ public class SignInController {
                 (passwordField.getText().equals(admin.getPassword()) || visiblePasswordField.getText().equals(admin.getPassword()))) {
             wrongLabel.setVisible(false);
             signedIn = true;
-            new PageLoader().loadScene("/View/AdminHomePage.fxml");
+            new PageLoader().loadScene("/View/AdminHomepage.fxml");
         }
         else {
             StudentFileStream sfs = new StudentFileStream();
@@ -48,7 +44,24 @@ public class SignInController {
                     wrongLabel.setVisible(false);
                     System.out.println("page change");
                     signedIn = true;
+                    SignedInPerson sip = new SignedInPerson();
+                    sip.setPerson(s);
                     break;
+                }
+            }
+            if(!signedIn){
+                ProfessorFileStream pfs = new ProfessorFileStream();
+                List <Professor> professorList = pfs.read();
+                for(Professor p : professorList){
+                    if (usernameField.getText().equals(p.getUsername()) &&
+                            (passwordField.getText().equals(p.getPassword()) || visiblePasswordField.getText().equals(p.getPassword()))) {
+                        wrongLabel.setVisible(false);
+                        signedIn = true;
+                        SignedInPerson sip = new SignedInPerson();
+                        sip.setPerson(p);
+                        new PageLoader().loadScene("/View/ProfessorHomepage.fxml");
+                        break;
+                    }
                 }
             }
         }

@@ -4,8 +4,6 @@ import Model.Day;
 import Model.Food;
 import Model.FoodFileStream;
 import Model.PageLoader;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -110,13 +108,13 @@ public class FoodSelectingController {
             }
             if(!rangeLabel.isVisible()) {
                 ffs.write(reservedFoodList, "Resources/Files/reservedFoods");
-                new PageLoader().loadScene("/View/AdminHomePage.fxml");
+                new PageLoader().loadScene("/View/AdminHomepage.fxml");
             }
         }
     }
 
     public void goBackToHomepage(ActionEvent actionEvent) throws IOException {
         if(actionEvent.getSource() == backButton)
-            new PageLoader().loadScene("/View/AdminHomePage.fxml");
+            new PageLoader().loadScene("/View/AdminHomepage.fxml");
     }
 }

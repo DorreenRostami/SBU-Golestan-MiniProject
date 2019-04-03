@@ -5,49 +5,49 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class FoodFileStream {
-    public void write(List<Food> list, String file) {
+public class CourseFileStream {
+    public void write(List<Course> list) {
         ObjectOutputStream out = null;
         try {
-            out = new ObjectOutputStream(new FileOutputStream(file));
-            for (Food f : list)
-                out.writeObject(f);
+            out = new ObjectOutputStream(new FileOutputStream("Resources/Files/courses"));
+            for (Course c : list)
+                out.writeObject(c);
         } catch (IOException e) {
-            System.out.println("error opening food file");
+            System.out.println("error opening course file");
         } catch (NoSuchElementException e) {
-            System.out.println("food input error");
+            System.out.println("course input error");
         }
         finally {
             try {
                 if(out != null)
                     out.close();
             } catch (IOException e) {
-                System.out.println("error closing food file");
+                System.out.println("error closing course file");
             }
         }
     }
 
-    public List<Food> read(String file) {
-        List<Food> list = new ArrayList<>();
+    public List<Course> read() {
+        List<Course> list = new ArrayList<>();
         ObjectInputStream input = null;
         try {
-            input = new ObjectInputStream(new FileInputStream(file));
+            input = new ObjectInputStream(new FileInputStream("Resources/Files/courses"));
             while (true) {
-                Food f = (Food) input.readObject();
-                list.add(f);
+                Course c = (Course) input.readObject();
+                list.add(c);
             }
         } catch (EOFException e) {
             return list;
         } catch (ClassNotFoundException e) {
-            System.out.println("food class not found.");
+            System.out.println("course class not found.");
         }catch (IOException e) {
-            System.out.println("error opening food file.");
+            System.out.println("error opening course file.");
         } finally {
             try {
                 if(input != null)
                     input.close();
             } catch (IOException e) {
-                System.out.println("error closing food file.");
+                System.out.println("error closing course file.");
             }
         }
         return list;

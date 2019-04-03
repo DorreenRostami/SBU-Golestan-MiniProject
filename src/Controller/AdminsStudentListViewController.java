@@ -14,9 +14,9 @@ import java.util.List;
 
 public class AdminsStudentListViewController {
     @FXML
-    public Button backButton;
+    public Button backButton, okButton;
     @FXML
-    public ListView<String> theStudentsNameList, theStudentsCoursesList;
+    public ListView<String> theStudentsNamesList, theStudentsCoursesList;
 
     public void initialize(){
         showStudents();
@@ -29,11 +29,18 @@ public class AdminsStudentListViewController {
         for (int i = 0; i < studentList.size(); i++) {
             studentNames.add(studentList.get(i).getUsername());
         }
-        theStudentsNameList.setItems(studentNames);
+        theStudentsNamesList.setItems(studentNames);
     }
 
     public void goBackToHomepage(ActionEvent actionEvent) throws IOException {
         if(actionEvent.getSource() == backButton)
-            new PageLoader().loadScene("/View/AdminHomePage.fxml");
+            new PageLoader().loadScene("/View/AdminHomepage.fxml");
+    }
+
+    public void showStudentDetails(ActionEvent actionEvent) {
+        if(actionEvent.getSource() == okButton){
+            StudentFileStream sfs = new StudentFileStream();
+            List<Student> studentList = sfs.read("Resources/Files/students");
+        }
     }
 }

@@ -13,16 +13,16 @@ public class StudentFileStream {
             for (Student s : list)
                 out.writeObject(s);
         } catch (IOException e) {
-            System.out.println("error opening file");
+            System.out.println("error opening student file");
         } catch (NoSuchElementException e) {
-            System.out.println("input error");
+            System.out.println("student input error");
         }
         finally {
             try {
                 if(out != null)
                     out.close();
             } catch (IOException e) {
-                System.out.println("error closing file");
+                System.out.println("error closing student file");
             }
         }
     }
@@ -39,16 +39,15 @@ public class StudentFileStream {
         } catch (EOFException e) {
             return list;
         } catch (ClassNotFoundException e) {
-            System.out.println("class not found");
+            System.out.println("student class not found.");
         }catch (IOException e) {
-            System.out.println("error opening file.");
-            System.out.println(e.getMessage());
+            System.out.println("error opening student file. " + e.getMessage() + "\n" + e.toString());
         } finally {
             try {
                 if(input != null)
                     input.close();
             } catch (IOException e) {
-                System.out.println("error closing file.");
+                System.out.println("error closing student file.");
             }
         }
         return list;

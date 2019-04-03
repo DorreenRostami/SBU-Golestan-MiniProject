@@ -7,12 +7,16 @@ public class Make {
         Student s = new Student(username);
         list.add(s);
     }
-    public void makeCourse(String name, int unit, int capacity, List<Course> list){
-        Course c = new Course(name, unit, capacity);
+    public void makeCourse(String name, int unit, int capacity, int start, int end, Day day, String professor, List<Course> list){
+        Course c = new Course(name, unit, capacity, start, end, day, professor);
         list.add(c);
     }
     public void makeFood(String name, int price, List<Food> list){
         Food f = new Food(name, price);
         list.add(f);
+    }
+    public void makeProfessor(String username, List<Professor> list){
+        Professor p = new Professor(username);
+        list.add(p);
     }
 }

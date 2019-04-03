@@ -10,7 +10,7 @@ public class Student implements Serializable {
     private long balance = 0;
     private int GPA = 20;
     private int courseCount = 0;
-    //private List<Course> COURSES_TAKEN = new ArrayList<>();
+    private List<Course> COURSES_TAKEN = new ArrayList<>();
 
     public Student(String username){
         this.username = username;
@@ -54,5 +54,13 @@ public class Student implements Serializable {
 
     public void setCourseCount(int courseCount) {
         this.courseCount = courseCount;
+    }
+
+    public List<Course> getCOURSES_TAKEN() {
+        return COURSES_TAKEN;
+    }
+
+    public void setCOURSES_TAKEN(List<Course> COURSES_TAKEN) {
+        this.COURSES_TAKEN = COURSES_TAKEN;
     }
 }

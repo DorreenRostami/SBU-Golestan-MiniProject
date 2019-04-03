@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfessorMakeClassController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#c5c4c4" height="50.0" stroke="#575656" strokeType="INSIDE" width="900.0" />
+      <Button fx:id="backButton" layoutX="823.0" layoutY="12.0" mnemonicParsing="false" onAction="#goBackToHomepage" text="Back" />
+      <Text layoutX="700.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="صفحه ایجاد کلاس">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="684.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اسم کلاس" textAlignment="RIGHT" />
+      <Text layoutX="683.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تعداد واحد" textAlignment="RIGHT" />
+      <Text layoutX="699.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ظرفیت" textAlignment="RIGHT" />
+      <Text layoutX="701.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ساعت" textAlignment="JUSTIFY" />
+      <Text layoutX="715.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="روز" textAlignment="RIGHT" />
+      <TextField fx:id="nameTextField" alignment="CENTER_RIGHT" layoutX="483.0" layoutY="97.0" />
+      <TextField fx:id="unitTextField" alignment="CENTER_RIGHT" layoutX="483.0" layoutY="147.0" />
+      <TextField fx:id="capacityTextField" alignment="CENTER_RIGHT" layoutX="483.0" layoutY="197.0" />
+      <VBox layoutX="532.0" layoutY="255.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="100.0">
+         <children>
+            <CheckBox fx:id="firstHourCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#firstHour" text="8 - 10" textAlignment="RIGHT" />
+            <CheckBox fx:id="secondHourCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#secondHour" text="10 - 12" textAlignment="RIGHT" />
+            <CheckBox fx:id="thirdHourCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="28.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#thirdHour" text="14 - 16" textAlignment="RIGHT" />
+         </children>
+      </VBox>
+      <VBox layoutX="532.0" layoutY="335.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="100.0">
+         <children>
+            <CheckBox fx:id="firstDayCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#firstDay" text="شنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="secondDayCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#secondDay" text="یکشنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="thirdDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="28.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#thirdDay" text="دوشنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="fourthDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="45.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fourthDay" text="سه شنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="fifthDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="63.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fifthDay" text="چهار شنبه" textAlignment="RIGHT" />
+         </children>
+      </VBox>
+      <Button fx:id="doneButton" alignment="CENTER_RIGHT" layoutX="432.0" layoutY="500.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#done" style="-fx-background-color: #3e2dd4;" text="ایجاد کلاس و بازگشت به صفحه اصلی" textAlignment="RIGHT" textFill="WHITE" />
+   </children>
+</AnchorPane>

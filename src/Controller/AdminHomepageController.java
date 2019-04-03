@@ -7,9 +7,9 @@ import javafx.scene.control.*;
 
 import java.io.IOException;
 
-public class AdminHomePageController {
+public class AdminHomepageController {
     @FXML
-    public Hyperlink foods, books, students, professors, classes;
+    public Hyperlink foods, books, students, professors, classes, back;
 
     public void goToFoodsPage(ActionEvent actionEvent) throws IOException {
         if(actionEvent.getSource() == foods)
@@ -28,5 +28,10 @@ public class AdminHomePageController {
     }
 
     public void goToClassesPage(ActionEvent actionEvent) {
+    }
+
+    public void goBack(ActionEvent actionEvent) throws IOException {
+        if(actionEvent.getSource() == back)
+            new PageLoader().loadScene("/View/SignIn.fxml");
     }
 }

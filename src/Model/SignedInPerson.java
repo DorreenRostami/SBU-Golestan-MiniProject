@@ -1,7 +1,7 @@
 package Model;
 
 public class SignedInPerson {
-    private Object person;
+    private static Object person = null;
 
     public void setPerson(Object p){
         person = p;
