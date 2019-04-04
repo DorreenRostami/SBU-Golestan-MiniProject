@@ -37,7 +37,7 @@ public class SignInController {
         }
         else {
             StudentFileStream sfs = new StudentFileStream();
-            List<Student> studentList = sfs.read("Resources/Files/students");
+            List<Student> studentList = sfs.read();
             for (Student s: studentList) {
                 if (usernameField.getText().equals(s.getUsername()) &&
                         (passwordField.getText().equals(s.getPassword()) || visiblePasswordField.getText().equals(s.getPassword()))) {

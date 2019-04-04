@@ -13,7 +13,7 @@ public class AdminHomepageController {
 
     public void goToFoodsPage(ActionEvent actionEvent) throws IOException {
         if(actionEvent.getSource() == foods)
-            new PageLoader().loadScene("/View/FoodSelecting.fxml");
+            new PageLoader().loadScene("/View/AdminFoodSelecting.fxml");
     }
 
     public void goToBooksPage(ActionEvent actionEvent) {

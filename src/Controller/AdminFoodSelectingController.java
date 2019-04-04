@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FoodSelectingController {
+public class AdminFoodSelectingController {
     @FXML
     public Button backButton, doneButton;
     @FXML

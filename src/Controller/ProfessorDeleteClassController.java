@@ -1,28 +1,105 @@
 package Controller;
 
 import Model.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.text.Text;
 
-import java.io.IOException;
 import java.util.List;
 
+public class ProfessorDeleteClassController {
+    private SignedInPerson signedInPerson = new SignedInPerson();
+    private Course currCourse = null;
+    private int start, end;
+    private Day day;
 
-public class ProfessorMakeClassController {
     @FXML
-    public Button backButton, doneButton;
+    public TextField nameTextField;
     @FXML
-    public TextField nameTextField, unitTextField, capacityTextField;
+    public Button showCourseButton, doneButton;
+    @FXML
+    public ListView<String> theStudentsNamesList;
+    @FXML
+    public Text theUnit, theCapacity, wrongClass;
     @FXML
     public CheckBox firstHourCheckBox, secondHourCheckBox, thirdHourCheckBox;
     @FXML
     public CheckBox firstDayCheckBox, secondDayCheckBox, thirdDayCheckBox, fourthDayCheckBox, fifthDayCheckBox;
 
-    private SignedInPerson signedInProfessor = new SignedInPerson();
-    private int unit, capacity, start, end;
-    private String name;
-    private Day day;
+    public void showCourse(){
+        String name = nameTextField.getText();
+        Professor professor = (Professor) signedInPerson.getPerson();
+        List<Course> courses = professor.getCOURSES_GIVEN();
+        for(Course c : courses){
+            if(name.equals(c.getName()) && c.getStart() == start && c.getEnd() == end && c.getDay().equals(day)){
+                currCourse = c;
+                wrongClass.setVisible(false);
+                break;
+            }
+            else
+                wrongClass.setVisible(true);
+        }
+        if(!wrongClass.isVisible()) {
+            theUnit.setText(Integer.toString(currCourse.getUnit()));
+            theCapacity.setText(Integer.toString(currCourse.getCapacity()));
+            theUnit.setVisible(true);
+            theCapacity.setVisible(true);
+            List<String> studentList = currCourse.getSTUDENTS_TAKING_COURSE();
+            ObservableList<String> studentNames = FXCollections.observableArrayList();
+            studentNames.addAll(studentList);
+            theStudentsNamesList.setItems(studentNames);
+        }
+    }
+
+    public void done(){
+        if(!wrongClass.isVisible()) {
+            Professor professor = (Professor) signedInPerson.getPerson();
+            List<Course> courses = professor.getCOURSES_GIVEN();
+            for (int i = 0; i < courses.size(); i++) {
+                if (courses.get(i).equals(currCourse)) {
+                    courses.remove(i);
+                    break;
+                }
+            }
+            professor.setCOURSES_GIVEN(courses);
+            ProfessorFileStream pfs = new ProfessorFileStream();
+            List<Professor> professorList = pfs.read();
+            for (int i = 0; i < professorList.size(); i++) {
+                if (professorList.get(i).getUsername().equals(professor.getUsername())) {
+                    professorList.set(i, professor);
+                    break;
+                }
+            }
+            pfs.write(professorList);
+
+            CourseFileStream cfs = new CourseFileStream();
+            List<Course> courseList = cfs.read();
+            for (int i = 0; i < courseList.size(); i++) {
+                if (courseList.get(i).equals(currCourse)) {
+                    courseList.remove(i);
+                    break;
+                }
+            }
+            cfs.write(courseList);
+
+            StudentFileStream sfs = new StudentFileStream();
+            List<Student> studentList = sfs.read();
+            for (int i = 0; i < studentList.size(); i++) {
+                List<Course> studentsCourses = studentList.get(i).getCOURSES_TAKEN();
+                for (int j = 0; j < studentsCourses.size(); j++) {
+                    if (studentsCourses.get(i).equals(currCourse)) {
+                        studentsCourses.remove(i);
+                        studentList.get(i).setCOURSES_TAKEN(studentsCourses);
+                        break;
+                    }
+                }
+            }
+            sfs.write(studentList);
+        }
+    }
 
     public void firstHour(ActionEvent actionEvent) {
         if(firstHourCheckBox.isSelected()){
@@ -115,32 +192,5 @@ public class ProfessorMakeClassController {
             fourthDayCheckBox.setSelected(false);
         else if(firstDayCheckBox.isSelected())
             firstDayCheckBox.setSelected(false);
-    }
-
-    public void done(ActionEvent actionEvent) throws IOException {
-        CourseFileStream cfs = new CourseFileStream();
-        List<Course> list = cfs.read();
-        name = nameTextField.getText();
-        unit = Integer.valueOf(unitTextField.getText());
-        capacity = Integer.valueOf(capacityTextField.getText());
-        Course newCourse = new Course(name, unit, capacity, start, end, day, ((Professor) signedInProfessor.getPerson()).getUsername());
-        list.add(newCourse);
-        cfs.write(list);
-
-        ((Professor) signedInProfessor.getPerson()).setCOURSES_GIVEN(list);
-        ProfessorFileStream pfs = new ProfessorFileStream();
-        List<Professor> p = pfs.read();
-        for(int i = 0; i < p.size(); i++){
-            if(p.get(i).getUsername().equals(((Professor) signedInProfessor.getPerson()).getUsername())){
-                p.set(i, (Professor) signedInProfessor.getPerson());
-                break;
-            }
-        }
-        pfs.write(p);
-        new PageLoader().loadScene("/View/ProfessorHomepage.fxml");
-    }
-
-    public void goBackToHomepage(ActionEvent actionEvent) throws IOException {
-        new PageLoader().loadScene("/View/ProfessorHomepage.fxml");
     }
 }

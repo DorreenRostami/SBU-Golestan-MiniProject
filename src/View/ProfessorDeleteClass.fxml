@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProfessorDeleteClassController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#c5c4c4" height="50.0" stroke="#575656" strokeType="INSIDE" width="900.0" />
+      <Button fx:id="backButton" layoutX="823.0" layoutY="12.0" mnemonicParsing="false" onAction="#goBackToHomepage" text="Back" />
+      <Text layoutX="706.0" layoutY="30.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="صفحه حذف کلاس">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="706.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اسم کلاس" textAlignment="RIGHT" />
+      <TextField fx:id="nameTextField" alignment="CENTER_RIGHT" layoutX="542.0" layoutY="101.0" />
+      <Button fx:id="doneButton" alignment="CENTER_RIGHT" layoutX="542.0" layoutY="506.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#done" style="-fx-background-color: #3e2dd4;" text="حذف کلاس و بازگشت به صفحه اصلی" textAlignment="RIGHT" textFill="WHITE" />
+      <Button fx:id="showCourseButton" layoutX="390.0" layoutY="101.0" mnemonicParsing="false" onAction="#showCourse" text="نمایش اطلاعات کلاس" />
+      <Text layoutX="707.0" layoutY="392.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="تعداد واحد" textAlignment="RIGHT" />
+      <Text layoutX="723.0" layoutY="442.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="ظرفیت" textAlignment="RIGHT" />
+      <Text layoutX="728.0" layoutY="201.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="ساعت" textAlignment="JUSTIFY" />
+      <Text layoutX="736.0" layoutY="297.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="روز" textAlignment="RIGHT" />
+      <ListView fx:id="theStudentsNamesList" layoutX="120.0" layoutY="101.0" prefHeight="382.0" prefWidth="200.0" />
+      <Text fx:id="theUnit" layoutX="542.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تعداد واحد" textAlignment="RIGHT" />
+      <Text fx:id="theCapacity" layoutX="542.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ظرفیت" textAlignment="RIGHT" />
+      <Text fx:id="wrongClass" fill="#d50c0c" layoutX="361.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شما درسی با این اسم را ارائه نمیدهید!" visible="false" />
+      <VBox layoutX="533.0" layoutY="170.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="100.0">
+         <children>
+            <CheckBox fx:id="firstHourCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#firstHour" text="8 - 10" textAlignment="RIGHT" />
+            <CheckBox fx:id="secondHourCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#secondHour" text="10 - 12" textAlignment="RIGHT" />
+            <CheckBox fx:id="thirdHourCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="28.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#thirdHour" text="14 - 16" textAlignment="RIGHT" />
+         </children>
+      </VBox>
+      <VBox layoutX="533.0" layoutY="248.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="100.0">
+         <children>
+            <CheckBox fx:id="firstDayCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#firstDay" text="شنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="secondDayCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#secondDay" text="یکشنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="thirdDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="28.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#thirdDay" text="دوشنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="fourthDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="45.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fourthDay" text="سه شنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="fifthDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="63.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fifthDay" text="چهار شنبه" textAlignment="RIGHT" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

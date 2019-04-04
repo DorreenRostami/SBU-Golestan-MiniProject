@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,6 +18,8 @@ public class AdminsStudentListViewController {
     public Button backButton, okButton;
     @FXML
     public ListView<String> theStudentsNamesList, theStudentsCoursesList;
+    @FXML
+    public Text thePass, theBalance, theGPA;
 
     public void initialize(){
         showStudents();
@@ -24,7 +27,7 @@ public class AdminsStudentListViewController {
 
     private void showStudents(){
         StudentFileStream sfs = new StudentFileStream();
-        List<Student> studentList = sfs.read("Resources/Files/students");
+        List<Student> studentList = sfs.read();
         ObservableList<String> studentNames = FXCollections.observableArrayList();
         for (int i = 0; i < studentList.size(); i++) {
             studentNames.add(studentList.get(i).getUsername());
@@ -40,7 +43,7 @@ public class AdminsStudentListViewController {
     public void showStudentDetails(ActionEvent actionEvent) {
         if(actionEvent.getSource() == okButton){
             StudentFileStream sfs = new StudentFileStream();
-            List<Student> studentList = sfs.read("Resources/Files/students");
+            List<Student> studentList = sfs.read();
         }
     }
 }
