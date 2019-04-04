@@ -42,7 +42,7 @@ public class SignInController {
                 if (usernameField.getText().equals(s.getUsername()) &&
                         (passwordField.getText().equals(s.getPassword()) || visiblePasswordField.getText().equals(s.getPassword()))) {
                     wrongLabel.setVisible(false);
-                    System.out.println("page change");
+                    new PageLoader().loadScene("/View/StudentHomepage.fxml");
                     signedIn = true;
                     SignedInPerson sip = new SignedInPerson();
                     sip.setPerson(s);

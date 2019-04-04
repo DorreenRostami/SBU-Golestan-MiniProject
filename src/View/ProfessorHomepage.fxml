@@ -20,10 +20,10 @@
          </effect>
       </Label>
       <Text layoutX="368.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="به صفحه اصلی خود خوش آمدید!" />
-      <Hyperlink fx:id="make" layoutX="737.0" layoutY="210.0" onAction="#makeClass" text="آماده کردن یک کلاس" />
-      <Hyperlink fx:id="delete" layoutX="763.0" layoutY="270.0" onAction="#deleteClass" text="بستن یک کلاس" />
-      <Hyperlink fx:id="students" layoutX="593.0" layoutY="330.0" onAction="#goToClassesPage" text="مشاهده لیست دانشجویان در کلاس های ارائه شده" />
-      <Text layoutX="693.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تمایل به انجام کدام کار را دارید؟" />
-      <Hyperlink fx:id="back" layoutX="716.0" layoutY="390.0" onAction="#goBack" text="بازگشت به صفحه نخست" />
+      <Hyperlink fx:id="make" layoutX="710.0" layoutY="210.0" onAction="#changePage" text="آماده کردن یک کلاس" textAlignment="RIGHT" />
+      <Hyperlink fx:id="delete" layoutX="736.0" layoutY="270.0" onAction="#changePage" text="بستن یک کلاس" textAlignment="RIGHT" />
+      <Hyperlink fx:id="students" layoutX="566.0" layoutY="330.0" onAction="#changePage" text="مشاهده لیست دانشجویان در کلاس های ارائه شده" textAlignment="RIGHT" />
+      <Text layoutX="666.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تمایل به انجام کدام کار را دارید؟" textAlignment="RIGHT" />
+      <Hyperlink fx:id="back" layoutX="689.0" layoutY="390.0" onAction="#changePage" text="بازگشت به صفحه نخست" textAlignment="RIGHT" />
    </children>
 </AnchorPane>

@@ -20,12 +20,12 @@
          </effect>
       </Label>
       <Text layoutX="369.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="به صفحه اصلی خود خوش آمدید!" />
-      <Hyperlink fx:id="foods" layoutX="603.0" layoutY="210.0" onAction="#goToFoodsPage" text="آماده کردن برنامه غذایی هفته جاری دانشجویان" />
-      <Hyperlink fx:id="books" layoutX="675.0" layoutY="270.0" onAction="#goToBooksPage" text="بررسی مسائل مربوط به کتابخانه" />
-      <Hyperlink fx:id="students" layoutX="701.0" layoutY="330.0" onAction="#goToStudentsPage" text="مشاهده لیست دانشجویان" />
-      <Hyperlink fx:id="professors" layoutX="714.0" layoutY="390.0" onAction="#goToProfessorsPage" text="مشاهده لیست استادان" />
-      <Hyperlink fx:id="classes" layoutX="653.0" layoutY="450.0" onAction="#goToClassesPage" text="مشاهده لیست کلاس های ارائه شده" />
-      <Text layoutX="683.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تمایل به انجام کدام کار را دارید؟" />
-      <Hyperlink fx:id="back" layoutX="709.0" layoutY="510.0" onAction="#goBack" text="بازگشت به صفحه نخست" />
+      <Hyperlink fx:id="foods" layoutX="585.0" layoutY="210.0" onAction="#changePage" text="آماده کردن برنامه غذایی هفته جاری دانشجویان" textAlignment="RIGHT" />
+      <Hyperlink fx:id="books" layoutX="657.0" layoutY="270.0" onAction="#changePage" text="بررسی مسائل مربوط به کتابخانه" textAlignment="RIGHT" />
+      <Hyperlink fx:id="students" layoutX="683.0" layoutY="330.0" onAction="#changePage" text="مشاهده لیست دانشجویان" textAlignment="RIGHT" />
+      <Hyperlink fx:id="professors" layoutX="696.0" layoutY="390.0" onAction="#changePage" text="مشاهده لیست استادان" textAlignment="RIGHT" />
+      <Hyperlink fx:id="classes" layoutX="635.0" layoutY="450.0" onAction="#changePage" text="مشاهده لیست کلاس های ارائه شده" textAlignment="RIGHT" />
+      <Text layoutX="665.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تمایل به انجام کدام کار را دارید؟" textAlignment="RIGHT" />
+      <Hyperlink fx:id="back" layoutX="691.0" layoutY="510.0" onAction="#changePage" text="بازگشت به صفحه نخست" textAlignment="RIGHT" />
    </children>
 </AnchorPane>

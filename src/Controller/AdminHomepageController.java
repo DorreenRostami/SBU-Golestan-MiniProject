@@ -11,27 +11,13 @@ public class AdminHomepageController {
     @FXML
     public Hyperlink foods, books, students, professors, classes, back;
 
-    public void goToFoodsPage(ActionEvent actionEvent) throws IOException {
+    public void changePage(ActionEvent actionEvent) throws IOException {
         if(actionEvent.getSource() == foods)
             new PageLoader().loadScene("/View/AdminFoodSelecting.fxml");
-    }
-
-    public void goToBooksPage(ActionEvent actionEvent) {
-    }
-
-    public void goToStudentsPage(ActionEvent actionEvent) throws IOException {
-        if(actionEvent.getSource() == students)
+        else if(actionEvent.getSource() == students)
             new PageLoader().loadScene("/View/AdminsStudentListView.fxml");
-    }
-
-    public void goToProfessorsPage(ActionEvent actionEvent) {
-    }
-
-    public void goToClassesPage(ActionEvent actionEvent) {
-    }
-
-    public void goBack(ActionEvent actionEvent) throws IOException {
-        if(actionEvent.getSource() == back)
+        else if(actionEvent.getSource() == back)
             new PageLoader().loadScene("/View/SignIn.fxml");
+
     }
 }

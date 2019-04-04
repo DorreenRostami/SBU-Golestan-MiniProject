@@ -21,16 +21,16 @@
          </font>
       </Text>
       <Text layoutX="706.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اسم کلاس" textAlignment="RIGHT" />
-      <TextField fx:id="nameTextField" alignment="CENTER_RIGHT" layoutX="542.0" layoutY="101.0" />
-      <Button fx:id="doneButton" alignment="CENTER_RIGHT" layoutX="542.0" layoutY="506.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#done" style="-fx-background-color: #3e2dd4;" text="حذف کلاس و بازگشت به صفحه اصلی" textAlignment="RIGHT" textFill="WHITE" />
-      <Button fx:id="showCourseButton" layoutX="390.0" layoutY="101.0" mnemonicParsing="false" onAction="#showCourse" text="نمایش اطلاعات کلاس" />
+      <TextField fx:id="nameTextField" alignment="CENTER_RIGHT" layoutX="533.0" layoutY="98.0" prefWidth="140.0" />
+      <Button fx:id="doneButton" alignment="CENTER_RIGHT" layoutX="381.0" layoutY="508.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#done" style="-fx-background-color: #3e2dd4;" text="حذف کلاس و بازگشت به صفحه اصلی" textAlignment="RIGHT" textFill="WHITE" />
+      <Button fx:id="showCourseButton" layoutX="644.0" layoutY="508.0" mnemonicParsing="false" onAction="#showCourse" text="نمایش اطلاعات کلاس" />
       <Text layoutX="707.0" layoutY="392.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="تعداد واحد" textAlignment="RIGHT" />
       <Text layoutX="723.0" layoutY="442.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="ظرفیت" textAlignment="RIGHT" />
       <Text layoutX="728.0" layoutY="201.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="ساعت" textAlignment="JUSTIFY" />
       <Text layoutX="736.0" layoutY="297.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="روز" textAlignment="RIGHT" />
       <ListView fx:id="theStudentsNamesList" layoutX="120.0" layoutY="101.0" prefHeight="382.0" prefWidth="200.0" />
-      <Text fx:id="theUnit" layoutX="542.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تعداد واحد" textAlignment="RIGHT" />
-      <Text fx:id="theCapacity" layoutX="542.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ظرفیت" textAlignment="RIGHT" />
+      <Text fx:id="theUnit" layoutX="542.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تعداد واحد" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="theCapacity" layoutX="542.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ظرفیت" textAlignment="RIGHT" visible="false" />
       <Text fx:id="wrongClass" fill="#d50c0c" layoutX="361.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شما درسی با این اسم را ارائه نمیدهید!" visible="false" />
       <VBox layoutX="533.0" layoutY="170.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="100.0">
          <children>

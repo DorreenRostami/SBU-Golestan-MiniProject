@@ -11,18 +11,12 @@ public class ProfessorHomepageController {
     @FXML
     public Hyperlink make, delete, students, back;
 
-
-    public void makeClass(ActionEvent actionEvent) throws IOException {
-        new PageLoader().loadScene("/View/ProfessorMakeClass.fxml");
-    }
-
-    public void deleteClass(ActionEvent actionEvent) {
-    }
-
-    public void goToClassesPage(ActionEvent actionEvent) {
-    }
-
-    public void goBack(ActionEvent actionEvent) throws IOException {
-        new PageLoader().loadScene("/View/SignIn.fxml");
+    public void changePage(ActionEvent actionEvent) throws IOException {
+        if (actionEvent.getSource() == make)
+            new PageLoader().loadScene("/View/ProfessorMakeClass.fxml");
+        else if (actionEvent.getSource() == delete)
+            new PageLoader().loadScene("/View/ProfessorDeleteClass.fxml");
+        else if (actionEvent.getSource() == back)
+            new PageLoader().loadScene("/View/SignIn.fxml");
     }
 }

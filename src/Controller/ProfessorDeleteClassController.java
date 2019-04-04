@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.util.List;
 
 public class ProfessorDeleteClassController {
@@ -54,7 +55,8 @@ public class ProfessorDeleteClassController {
         }
     }
 
-    public void done(){
+    public void done() throws IOException {
+        showCourse();
         if(!wrongClass.isVisible()) {
             Professor professor = (Professor) signedInPerson.getPerson();
             List<Course> courses = professor.getCOURSES_GIVEN();
@@ -98,6 +100,8 @@ public class ProfessorDeleteClassController {
                 }
             }
             sfs.write(studentList);
+
+            new PageLoader().loadScene("/View/ProfessorHomepage.fxml");
         }
     }
 
@@ -192,5 +196,9 @@ public class ProfessorDeleteClassController {
             fourthDayCheckBox.setSelected(false);
         else if(firstDayCheckBox.isSelected())
             firstDayCheckBox.setSelected(false);
+    }
+
+    public void goBackToHomepage(ActionEvent actionEvent) throws IOException {
+        new PageLoader().loadScene("/View/ProfessorHomepage.fxml");
     }
 }

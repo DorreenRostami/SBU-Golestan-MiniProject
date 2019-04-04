@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentAddMoneyController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#c5c4c4" height="50.0" stroke="#575656" strokeType="INSIDE" width="900.0" />
+      <Button fx:id="backButton" layoutX="823.0" layoutY="12.0" mnemonicParsing="false" onAction="#changePage" text="Back" />
+      <Text layoutX="673.0" layoutY="29.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="افزایش موجودی حساب">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="696.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="موجودی حساب شما" textAlignment="RIGHT" />
+      <Text layoutX="734.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شماره کارت" textAlignment="RIGHT" />
+      <Text layoutX="745.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="رمز کارت" textAlignment="RIGHT" />
+      <Text layoutX="729.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="مبلغ (به ریال)" textAlignment="RIGHT" />
+      <TextField fx:id="cardNumber" layoutX="473.0" layoutY="132.0" prefWidth="200.0" />
+      <TextField fx:id="cardPassword" layoutX="473.0" layoutY="192.0" prefWidth="200.0" />
+      <TextField fx:id="sum" layoutX="473.0" layoutY="252.0" prefWidth="200.0" />
+      <Text fx:id="theBalance" layoutX="473.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="موجودی" visible="false" />
+      <Button fx:id="doneButton" alignment="CENTER_RIGHT" layoutX="463.0" layoutY="508.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#changePage" style="-fx-background-color: #3e2dd4;" text="اتمام عملیات و بازگشت به صفحه اصلی" textAlignment="RIGHT" textFill="WHITE" />
+      <Label fx:id="wrongLabel" layoutX="644.0" layoutY="350.0" text="شماره یا رمز کارت اشتباه است!" textAlignment="RIGHT" textFill="#d50c0c" visible="false" />
+   </children>
+</AnchorPane>
