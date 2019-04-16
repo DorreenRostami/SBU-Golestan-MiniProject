@@ -102,7 +102,7 @@ public class AdminFoodSelectingController {
                     if (rangeLabel.isVisible())
                         rangeLabel.setVisible(false);
                     Food curr = foodList.get(element - 1);
-                    curr.day = d;
+                    curr.setDay(d);
                     reservedFoodList.add(curr);
                 }
             }

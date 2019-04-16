@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.nio.file.Paths;
 
 public class PageLoader {
-    private static final int HEIGHT = 700;
     private static final int WIDTH = 900;
+    private static final int HEIGHT = 700;
     private static Stage stage;
 
     public static void initStage(Stage primStage){

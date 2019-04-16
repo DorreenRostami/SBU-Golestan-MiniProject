@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Student implements Serializable {
+    private static final long serialVersionUID = 2L;
     private String username;
     private String password = "123456";
     private long balance = 0;
-    private int GPA = 20;
+    private float GPA = 20;
     private int courseCount = 0;
     private List<Course> COURSES_TAKEN = new ArrayList<>();
 
@@ -40,7 +41,7 @@ public class Student implements Serializable {
         this.balance = balance;
     }
 
-    public int getGPA() {
+    public float getGPA() {
         return GPA;
     }
 

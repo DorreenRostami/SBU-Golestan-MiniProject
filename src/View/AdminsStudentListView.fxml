@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminsStudentListViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminsStudentListViewController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#c5c4c4" height="50.0" layoutY="-3.0" stroke="#575656" strokeType="INSIDE" width="900.0" />
       <Button fx:id="backButton" layoutX="822.0" layoutY="9.0" mnemonicParsing="false" onAction="#goBackToHomepage" text="Back" />
@@ -20,12 +20,12 @@
       <TextField fx:id="studentTextField" layoutX="327.0" layoutY="64.0" />
       <ListView fx:id="theStudentsNamesList" layoutX="663.0" layoutY="93.0" prefHeight="560.0" prefWidth="200.0" />
       <Text layoutX="495.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نام دانشجو موردنظر را وارد کنید تا اطلاعات کامل پروفایل او نشان داده شود:" />
-      <Text fx:id="pass" layoutX="455.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="رمز عبور:" textAlignment="RIGHT" />
-      <Text fx:id="balance" layoutX="424.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="موجودی حساب:" textAlignment="RIGHT" />
-      <Text fx:id="GPA" layoutX="471.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="معدل:" textAlignment="RIGHT" />
-      <Text fx:id="thePass" layoutX="460.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود رمز" textAlignment="RIGHT" />
-      <Text fx:id="theBalance" layoutX="439.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود موجودی" textAlignment="RIGHT" />
-      <Text fx:id="theGPA" layoutX="451.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود معدل" textAlignment="RIGHT" />
+      <Text layoutX="455.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="رمز عبور:" textAlignment="RIGHT" />
+      <Text layoutX="424.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="موجودی حساب:" textAlignment="RIGHT" />
+      <Text layoutX="471.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="معدل:" textAlignment="RIGHT" />
+      <Text fx:id="thePass" layoutX="455.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود رمز" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="theBalance" layoutX="424.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود موجودی" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="theGPA" layoutX="471.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود معدل" textAlignment="RIGHT" visible="false" />
       <ListView fx:id="theStudentsCoursesList" layoutX="38.0" layoutY="93.0" prefHeight="560.0" prefWidth="200.0" />
       <Button fx:id="okButton" layoutX="263.0" layoutY="64.0" mnemonicParsing="false" onAction="#showStudentDetails" text="تایید" />
    </children>

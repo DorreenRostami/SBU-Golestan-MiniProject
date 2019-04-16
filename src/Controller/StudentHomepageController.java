@@ -14,5 +14,7 @@ public class StudentHomepageController {
     public void changePage(ActionEvent actionEvent) throws IOException {
         if(actionEvent.getSource() == money)
             new PageLoader().loadScene("/View/StudentAddMoney.fxml");
+        else if(actionEvent.getSource() == food)
+            new PageLoader().loadScene("/View/StudentFood.fxml");
     }
 }
