@@ -11,11 +11,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
-import javax.swing.plaf.ColorUIResource;
 import java.io.IOException;
 import java.util.List;
 
 public class AdminsStudentListViewController {
+    private List<Student> studentList = new StudentFileStream().read();
+
     @FXML
     public Button backButton, okButton;
     @FXML
@@ -30,8 +31,6 @@ public class AdminsStudentListViewController {
     }
 
     private void showStudents(){
-        StudentFileStream sfs = new StudentFileStream();
-        List<Student> studentList = sfs.read();
         ObservableList<String> studentNames = FXCollections.observableArrayList();
         for (Student student : studentList)
             studentNames.add(student.getUsername());
@@ -42,12 +41,9 @@ public class AdminsStudentListViewController {
         new PageLoader().loadScene("/View/AdminHomepage.fxml");
     }
 
-    public void showStudentDetails(ActionEvent actionEvent) {
+    public void showStudentDetails() {
         String name = studentTextField.getText();
         Student student = null;
-        StudentFileStream sfs = new StudentFileStream();
-        List<Student> studentList = sfs.read();
-        ObservableList<String> studentCourses = FXCollections.observableArrayList();
         for (Student s : studentList) {
             if (s.getUsername().equals(name)){
                 student = s;
@@ -55,6 +51,7 @@ public class AdminsStudentListViewController {
             }
         }
         if(student != null) {
+            ObservableList<String> studentCourses = FXCollections.observableArrayList();
             thePass.setText(student.getPassword());
             theBalance.setText(Long.toString(student.getBalance()));
             theGPA.setText(Float.toString(student.getGPA()));
