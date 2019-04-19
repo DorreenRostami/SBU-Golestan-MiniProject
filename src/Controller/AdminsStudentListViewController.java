@@ -38,7 +38,7 @@ public class AdminsStudentListViewController {
         theStudentsNamesList.setItems(studentNames);
     }
 
-    public void goBackToHomepage(ActionEvent actionEvent) throws IOException {
+    public void goBackToHomepage() throws IOException {
         new PageLoader().loadScene("/View/AdminHomepage.fxml");
     }
 
@@ -62,8 +62,10 @@ public class AdminsStudentListViewController {
             theBalance.setVisible(true);
             theGPA.setVisible(true);
             for (Course c : student.getCOURSES_TAKEN()) {
-                studentCourses.add("name: " + c.getName() + " prof: " + c.getProfessor() + " units: " + c.getUnit());
+                studentCourses.add("اسم کلاس: " + c.getName() + " / واحد: " + c.getUnit() +
+                        " / استاد: " + c.getProfessor() + " / نمره: " + (c.getGrade() == null ? "-" : c.getGrade()));
             }
+            theStudentsCoursesList.setItems(studentCourses);
         }
     }
 }

@@ -28,18 +28,18 @@
       <TextField fx:id="capacityTextField" alignment="CENTER_RIGHT" layoutX="483.0" layoutY="197.0" />
       <VBox layoutX="532.0" layoutY="255.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="100.0">
          <children>
-            <CheckBox fx:id="firstHourCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#firstHour" text="8 - 10" textAlignment="RIGHT" />
-            <CheckBox fx:id="secondHourCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#secondHour" text="10 - 12" textAlignment="RIGHT" />
-            <CheckBox fx:id="thirdHourCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="28.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#thirdHour" text="14 - 16" textAlignment="RIGHT" />
+            <CheckBox fx:id="firstHourCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#selectHour" text="8 - 10" textAlignment="RIGHT" />
+            <CheckBox fx:id="secondHourCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#selectHour" text="10 - 12" textAlignment="RIGHT" />
+            <CheckBox fx:id="thirdHourCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="28.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#selectHour" text="14 - 16" textAlignment="RIGHT" />
          </children>
       </VBox>
       <VBox layoutX="532.0" layoutY="335.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="100.0">
          <children>
-            <CheckBox fx:id="firstDayCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#firstDay" text="شنبه" textAlignment="RIGHT" />
-            <CheckBox fx:id="secondDayCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#secondDay" text="یکشنبه" textAlignment="RIGHT" />
-            <CheckBox fx:id="thirdDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="28.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#thirdDay" text="دوشنبه" textAlignment="RIGHT" />
-            <CheckBox fx:id="fourthDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="45.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fourthDay" text="سه شنبه" textAlignment="RIGHT" />
-            <CheckBox fx:id="fifthDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="63.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fifthDay" text="چهار شنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="firstDayCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#selectDay" text="شنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="secondDayCheckBox" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#selectDay" text="یکشنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="thirdDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="28.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#selectDay" text="دوشنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="fourthDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="45.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#selectDay" text="سه شنبه" textAlignment="RIGHT" />
+            <CheckBox fx:id="fifthDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="63.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#selectDay" text="چهار شنبه" textAlignment="RIGHT" />
          </children>
       </VBox>
       <Button fx:id="doneButton" alignment="CENTER_RIGHT" layoutX="432.0" layoutY="500.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#done" style="-fx-background-color: #3e2dd4;" text="ایجاد کلاس و بازگشت به صفحه اصلی" textAlignment="RIGHT" textFill="WHITE" />

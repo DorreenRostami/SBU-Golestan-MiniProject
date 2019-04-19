@@ -45,7 +45,7 @@ public class Student implements Serializable {
         return GPA;
     }
 
-    public void setGPA(int GPA) {
+    public void setGPA(float GPA) {
         this.GPA = GPA;
     }
 

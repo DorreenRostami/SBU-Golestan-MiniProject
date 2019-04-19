@@ -16,6 +16,10 @@ public class AdminHomepageController {
             new PageLoader().loadScene("/View/AdminFoodSelecting.fxml");
         else if(actionEvent.getSource() == students)
             new PageLoader().loadScene("/View/AdminsStudentListView.fxml");
+        else if(actionEvent.getSource() == professors)
+            new PageLoader().loadScene("/View/AdminsProfessorListView.fxml");
+        else if(actionEvent.getSource() == classes)
+            new PageLoader().loadScene("/View/AdminsCourseListView.fxml");
         else if(actionEvent.getSource() == back)
             new PageLoader().loadScene("/View/SignIn.fxml");
 

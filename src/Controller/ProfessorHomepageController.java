@@ -18,5 +18,7 @@ public class ProfessorHomepageController {
             new PageLoader().loadScene("/View/ProfessorDeleteClass.fxml");
         else if (actionEvent.getSource() == back)
             new PageLoader().loadScene("/View/SignIn.fxml");
+        else if (actionEvent.getSource() == students)
+            new PageLoader().loadScene("/View/ProfessorsStudents.fxml");
     }
 }

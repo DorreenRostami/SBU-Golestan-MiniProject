@@ -19,6 +19,8 @@ public class StudentFoodController {
     @FXML
     public Text theBalance, notEnoughLabel;
 
+    //TO DO : admin food selecting be tartib o bedune day she o student class reserved food list dashte bashe k vqti dobare miad intu malum bashe
+
     public void initialize(){
         loadFood();
     }

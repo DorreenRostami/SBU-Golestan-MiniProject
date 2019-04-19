@@ -83,7 +83,7 @@
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Label fx:id="rangeLabel" layoutX="570.0" layoutY="489.0" text="اعداد باید بین 1 تا 12 باشند!" textAlignment="RIGHT" textFill="#d50c0c">
+      <Label fx:id="rangeLabel" layoutX="570.0" layoutY="489.0" text="اعداد باید بین 1 تا 12 باشند!" textAlignment="RIGHT" textFill="#d50c0c" visible="false">
          <font>
             <Font size="13.0" />
          </font>

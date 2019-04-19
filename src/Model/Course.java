@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Course implements Serializable {
+    private static final long serialVersionUID = 4L;
     private int unit, capacity, start, end;
+    private Float grade = null;
     private String name, professor;
     private List<String> STUDENTS_TAKING_COURSE = new ArrayList<>();
     private Day day;
@@ -62,5 +64,13 @@ public class Course implements Serializable {
 
     public void setProfessor(String professor) {
         this.professor = professor;
+    }
+
+    public Float getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Float grade) {
+        this.grade = grade;
     }
 }

@@ -8,25 +8,27 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminsStudentListViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminsStudentListViewController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#c5c4c4" height="50.0" layoutY="-3.0" stroke="#575656" strokeType="INSIDE" width="900.0" />
       <Button fx:id="backButton" layoutX="822.0" layoutY="9.0" mnemonicParsing="false" onAction="#goBackToHomepage" text="Back" />
-      <Text layoutX="644.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="لیست پروفایل های دانشجویان">
+      <Text layoutX="644.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="لیست پروفایل های دانشجویان" textAlignment="RIGHT">
          <font>
-            <Font size="13.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="studentTextField" layoutX="327.0" layoutY="64.0" />
-      <ListView fx:id="theStudentsNamesList" layoutX="663.0" layoutY="93.0" prefHeight="560.0" prefWidth="200.0" />
-      <Text layoutX="495.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نام دانشجو موردنظر را وارد کنید تا اطلاعات کامل پروفایل او نشان داده شود:" />
-      <Text layoutX="455.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="رمز عبور:" textAlignment="RIGHT" />
-      <Text layoutX="424.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="موجودی حساب:" textAlignment="RIGHT" />
-      <Text layoutX="471.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="معدل:" textAlignment="RIGHT" />
-      <Text fx:id="thePass" layoutX="455.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود رمز" textAlignment="RIGHT" visible="false" />
-      <Text fx:id="theBalance" layoutX="424.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود موجودی" textAlignment="RIGHT" visible="false" />
-      <Text fx:id="theGPA" layoutX="471.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود معدل" textAlignment="RIGHT" visible="false" />
-      <ListView fx:id="theStudentsCoursesList" layoutX="38.0" layoutY="93.0" prefHeight="560.0" prefWidth="200.0" />
-      <Button fx:id="okButton" layoutX="263.0" layoutY="64.0" mnemonicParsing="false" onAction="#showStudentDetails" text="تایید" />
+      <TextField fx:id="studentTextField" alignment="CENTER" layoutX="307.0" layoutY="64.0" prefWidth="100.0" promptText="نام دانشجو" />
+      <ListView fx:id="theStudentsNamesList" layoutX="663.0" layoutY="133.0" prefHeight="500.0" prefWidth="200.0" style="-fx-border-color: #575656;" />
+      <Text layoutX="438.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نام دانشجو موردنظر را وارد کنید تا اطلاعات کامل پروفایل او نشان داده شود:" />
+      <Text layoutX="535.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="رمز عبور:" textAlignment="RIGHT" />
+      <Text layoutX="504.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="موجودی حساب:" textAlignment="RIGHT" />
+      <Text layoutX="551.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="معدل:" textAlignment="RIGHT" />
+      <Text fx:id="thePass" layoutX="535.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود رمز" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="theBalance" layoutX="504.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود موجودی" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="theGPA" layoutX="551.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود معدل" textAlignment="RIGHT" visible="false" />
+      <ListView fx:id="theStudentsCoursesList" layoutX="38.0" layoutY="133.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="500.0" prefWidth="400.0" style="-fx-border-color: #575656;" />
+      <Button fx:id="okButton" layoutX="219.0" layoutY="64.0" mnemonicParsing="false" onAction="#showStudentDetails" text="تایید" />
+      <Text layoutX="717.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="نام های دانشجویان" textAlignment="RIGHT" />
+      <Text layoutX="193.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="کلاس های دانشجو" textAlignment="RIGHT" />
    </children>
 </AnchorPane>

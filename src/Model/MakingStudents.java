@@ -60,7 +60,6 @@ public class MakingStudents {
         ms.makeStudent("ferial", mylist);
         ms.makeStudent("mahsa", mylist);
         ms.makeStudent("amirreza", mylist);
-        StudentFileStream sfs = new StudentFileStream();
-        sfs.write(mylist);
+        new StudentFileStream().write(mylist);
     }
 }
