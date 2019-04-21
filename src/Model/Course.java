@@ -8,7 +8,7 @@ public class Course implements Serializable {
     private static final long serialVersionUID = 4L;
     private int unit, capacity, start, end;
     private Float grade = null;
-    private String name, professor;
+    private String name, professor, hour;
     private List<String> STUDENTS_TAKING_COURSE = new ArrayList<>();
     private Day day;
 
@@ -72,5 +72,9 @@ public class Course implements Serializable {
 
     public void setGrade(Float grade) {
         this.grade = grade;
+    }
+
+    public String getHour() {
+        return this.getStart() + " - " + this.getEnd();
     }
 }

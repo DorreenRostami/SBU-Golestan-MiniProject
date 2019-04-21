@@ -11,15 +11,16 @@ import java.util.List;
 
 public class StudentFoodController {
     private Student signedInStudent = (Student) new SignedInPerson().getPerson();
-
+    private List<Food> reservedFood = new FoodFileStream().read("Resources/Files/reservedFoods");
+    
     @FXML
     public Button backButton, doneButton;
     @FXML
     public CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8, checkBox9, checkBox10;
     @FXML
     public Text theBalance, notEnoughLabel;
-
-    //TO DO : admin food selecting be tartib o bedune day she o student class reserved food list dashte bashe k vqti dobare miad intu malum bashe
+    @FXML
+    public Text shanbeText, shanbeFood, yekshanbeText, yekshanbeFood, doshanbeText, doshanbeFood, seshanbeText, seshanbeFood, chaharshanbeText, chaharshanbeFood;
 
     public void initialize(){
         loadFood();
@@ -27,57 +28,85 @@ public class StudentFoodController {
 
     private void loadFood(){
         theBalance.setText(Long.toString(signedInStudent.getBalance()));
-        FoodFileStream ffs = new FoodFileStream();
-        List<Food> reservedFood = ffs.read("Resources/Files/reservedFoods");
-        for(Food f: reservedFood){
-            if (f.getDay() == Day.shanbe){
-                if(checkBox1.getText().length() == 0)
-                    checkBox1.setText(f.getName() + " " + f.getPrice());
-                else
-                    checkBox2.setText(f.getName() + " " + f.getPrice());
+        theBalance.setVisible(true);
+        if (reservedFood.get(0) == null)
+            checkBox1.setVisible(false);
+        else
+            checkBox1.setText(reservedFood.get(0).getName() + " " + reservedFood.get(0).getPrice());
+        if (reservedFood.get(1) == null)
+            checkBox2.setVisible(false);
+        else
+            checkBox2.setText(reservedFood.get(1).getName() + " " + reservedFood.get(1).getPrice());
+        if (reservedFood.get(2) == null)
+            checkBox3.setVisible(false);
+        else
+            checkBox3.setText(reservedFood.get(2).getName() + " " + reservedFood.get(2).getPrice());
+        if (reservedFood.get(3) == null)
+            checkBox4.setVisible(false);
+        else
+            checkBox4.setText(reservedFood.get(3).getName() + " " + reservedFood.get(3).getPrice());
+        if (reservedFood.get(4) == null)
+            checkBox5.setVisible(false);
+        else
+            checkBox5.setText(reservedFood.get(4).getName() + " " + reservedFood.get(4).getPrice());
+        if (reservedFood.get(5) == null)
+            checkBox6.setVisible(false);
+        else
+            checkBox6.setText(reservedFood.get(5).getName() + " " + reservedFood.get(5).getPrice());
+        if (reservedFood.get(6) == null)
+            checkBox7.setVisible(false);
+        else
+            checkBox7.setText(reservedFood.get(6).getName() + " " + reservedFood.get(6).getPrice());
+        if (reservedFood.get(7) == null)
+            checkBox8.setVisible(false);
+        else
+            checkBox8.setText(reservedFood.get(7).getName() + " " + reservedFood.get(7).getPrice());
+        if (reservedFood.get(8) == null)
+            checkBox9.setVisible(false);
+        else
+            checkBox9.setText(reservedFood.get(8).getName() + " " + reservedFood.get(8).getPrice());
+        if (reservedFood.get(9) == null)
+            checkBox10.setVisible(false);
+        else
+            checkBox10.setText(reservedFood.get(9).getName() + " " + reservedFood.get(9).getPrice());
+        List<Food> studentsFoods = signedInStudent.getRESERVED_FOODS();
+        for (Food f : studentsFoods) {
+            if (f.getDay() == Day.shanbe) {
+                checkBox1.setVisible(false);
+                checkBox2.setVisible(false);
+                shanbeText.setVisible(true);
+                shanbeFood.setText(f.getName());
+                shanbeFood.setVisible(true);
             }
-            else if (f.getDay() == Day.yekshanbe){
-                if(checkBox3.getText().length() == 0)
-                    checkBox3.setText(f.getName() + " " + f.getPrice());
-                else
-                    checkBox4.setText(f.getName() + " " + f.getPrice());
+            else if (f.getDay() == Day.yekshanbe) {
+                checkBox3.setVisible(false);
+                checkBox4.setVisible(false);
+                yekshanbeText.setVisible(true);
+                yekshanbeFood.setText(f.getName());
+                yekshanbeFood.setVisible(true);
             }
-            else if (f.getDay() == Day.doshanbe){
-                if(checkBox5.getText().length() == 0)
-                    checkBox5.setText(f.getName() + " " + f.getPrice());
-                else
-                    checkBox6.setText(f.getName() + " " + f.getPrice());
+            else if (f.getDay() == Day.doshanbe) {
+                checkBox5.setVisible(false);
+                checkBox6.setVisible(false);
+                doshanbeText.setVisible(true);
+                doshanbeFood.setText(f.getName());
+                doshanbeFood.setVisible(true);
             }
-            else if (f.getDay() == Day.seshanbe){
-                if(checkBox7.getText().length() == 0)
-                    checkBox7.setText(f.getName() + " " + f.getPrice());
-                else
-                    checkBox8.setText(f.getName() + " " + f.getPrice());
+            else if (f.getDay() == Day.seshanbe) {
+                checkBox7.setVisible(false);
+                checkBox8.setVisible(false);
+                seshanbeText.setVisible(true);
+                seshanbeFood.setText(f.getName());
+                seshanbeFood.setVisible(true);
             }
-            else if (f.getDay() == Day.chaharshanbe){
-                if(checkBox9.getText().length() == 0)
-                    checkBox9.setText(f.getName() + " " + f.getPrice());
-                else
-                    checkBox10.setText(f.getName() + " " + f.getPrice());
+            else if (f.getDay() == Day.chaharshanbe) {
+                checkBox9.setVisible(false);
+                checkBox10.setVisible(false);
+                chaharshanbeText.setVisible(true);
+                chaharshanbeFood.setText(f.getName());
+                chaharshanbeFood.setVisible(true);
             }
         }
-        if(checkBox1.getText().equals(""))
-            checkBox1.setVisible(false);
-        if(checkBox2.getText().equals(""))
-            checkBox2.setVisible(false);
-        if(checkBox3.getText().equals(""))
-            checkBox3.setVisible(false);
-        if(checkBox4.getText().equals(""))
-            checkBox4.setVisible(false);
-        if(checkBox5.getText().equals(""))
-            checkBox5.setVisible(false);
-        if(checkBox6.getText().equals(""))
-            checkBox6.setVisible(false);
-        if(checkBox7.getText().equals(""))
-            checkBox7.setVisible(false);
-        if(checkBox8.getText().equals(""))
-            checkBox8.setVisible(false);
-
     }
 
     public void goBackToHomepage() throws IOException {
@@ -131,71 +160,61 @@ public class StudentFoodController {
     }
 
     public void done() {
+        List<Food> studentsFood = signedInStudent.getRESERVED_FOODS();
         int total = 0;
         if(checkBox1.isSelected()){
-            String str = checkBox1.getText();
-            int i = str.indexOf(" ");
-            str = str.substring(i + 1);
-            total += Integer.valueOf(str);
+            studentsFood.add(reservedFood.get(0));
+            total += reservedFood.get(0).getPrice();
         }
         else if(checkBox2.isSelected()){
-            String str = checkBox2.getText();
-            int i = str.indexOf(" ");
-            str = str.substring(i + 1);
-            total += Integer.valueOf(str);
+            studentsFood.add(reservedFood.get(1));
+            total += reservedFood.get(1).getPrice();
         }
         if(checkBox3.isSelected()){
-            String str = checkBox3.getText();
-            int i = str.indexOf(" ");
-            str = str.substring(i + 1);
-            total += Integer.valueOf(str);
+            studentsFood.add(reservedFood.get(2));
+            total += reservedFood.get(2).getPrice();
         }
         else if(checkBox4.isSelected()){
-            String str = checkBox4.getText();
-            int i = str.indexOf(" ");
-            str = str.substring(i + 1);
-            total += Integer.valueOf(str);
+            studentsFood.add(reservedFood.get(3));
+            total += reservedFood.get(3).getPrice();
         }
         if(checkBox5.isSelected()){
-            String str = checkBox5.getText();
-            int i = str.indexOf(" ");
-            str = str.substring(i + 1);
-            total += Integer.valueOf(str);
+            studentsFood.add(reservedFood.get(4));
+            total += reservedFood.get(4).getPrice();
         }
         else if(checkBox6.isSelected()){
-            String str = checkBox6.getText();
-            int i = str.indexOf(" ");
-            str = str.substring(i + 1);
-            total += Integer.valueOf(str);
+            studentsFood.add(reservedFood.get(5));
+            total += reservedFood.get(5).getPrice();
         }
         if(checkBox7.isSelected()){
-            String str = checkBox7.getText();
-            int i = str.indexOf(" ");
-            str = str.substring(i + 1);
-            total += Integer.valueOf(str);
+            studentsFood.add(reservedFood.get(6));
+            total += reservedFood.get(6).getPrice();
         }
         else if(checkBox8.isSelected()){
-            String str = checkBox8.getText();
-            int i = str.indexOf(" ");
-            str = str.substring(i + 1);
-            total += Integer.valueOf(str);
+            studentsFood.add(reservedFood.get(7));
+            total += reservedFood.get(7).getPrice();
         }
         if(checkBox9.isSelected()){
-            String str = checkBox9.getText();
-            int i = str.indexOf(" ");
-            str = str.substring(i + 1);
-            total += Integer.valueOf(str);
+            studentsFood.add(reservedFood.get(8));
+            total += reservedFood.get(8).getPrice();
         }
         else if(checkBox10.isSelected()){
-            String str = checkBox10.getText();
-            int i = str.indexOf(" ");
-            str = str.substring(i + 1);
-            total += Integer.valueOf(str);
+            studentsFood.add(reservedFood.get(9));
+            total += reservedFood.get(9).getPrice();
         }
         if (total > signedInStudent.getBalance())
             notEnoughLabel.setVisible(true);
         else {
             signedInStudent.setBalance(signedInStudent.getBalance()- total);
+            signedInStudent.setRESERVED_FOODS(studentsFood);
+            List<Student> allStudents = new StudentFileStream().read();
+            for (int i = 0; i < allStudents.size(); i++) {
+                if (allStudents.get(i).getUsername().equals(signedInStudent.getUsername())){
+                    allStudents.set(i, signedInStudent);
+                    break;
+                }
+            }
+            new StudentFileStream().write(allStudents);
             try {
                 goBackToHomepage();
             } catch (IOException e) {

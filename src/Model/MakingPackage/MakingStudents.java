@@ -1,4 +1,7 @@
-package Model;
+package Model.MakingPackage;
+
+import Model.Student;
+import Model.StudentFileStream;
 
 import java.util.ArrayList;
 import java.util.List;

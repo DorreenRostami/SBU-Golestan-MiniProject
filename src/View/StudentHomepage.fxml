@@ -25,6 +25,7 @@
       <Hyperlink fx:id="food" layoutX="702.0" layoutY="270.0" onAction="#changePage" text="رزرو غذا برای هفته جاری" textAlignment="RIGHT" />
       <Hyperlink fx:id="book" layoutX="778.0" layoutY="330.0" onAction="#changePage" text="کتابخانه" textAlignment="RIGHT" />
       <Hyperlink fx:id="manage" layoutX="752.0" layoutY="390.0" onAction="#changePage" text="انتخاب کلاس" textAlignment="RIGHT" />
-      <Hyperlink fx:id="back" layoutX="699.0" layoutY="450.0" onAction="#changePage" text="بازگشت به صفحه نخست" textAlignment="RIGHT" />
+      <Hyperlink fx:id="back" layoutX="699.0" layoutY="510.0" onAction="#changePage" text="بازگشت به صفحه نخست" textAlignment="RIGHT" />
+      <Hyperlink fx:id="timetable" layoutX="751.0" layoutY="450.0" onAction="#changePage" text="برنامه هفتگی" textAlignment="RIGHT" />
    </children>
 </AnchorPane>

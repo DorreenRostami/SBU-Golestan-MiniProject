@@ -1,4 +1,7 @@
-package Model;
+package Model.MakingPackage;
+
+import Model.Food;
+import Model.FoodFileStream;
 
 import java.util.ArrayList;
 import java.util.List;

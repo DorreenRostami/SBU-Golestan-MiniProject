@@ -27,7 +27,7 @@
       <Text layoutX="554.0" layoutY="445.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="ظرفیت" textAlignment="RIGHT" />
       <Text layoutX="559.0" layoutY="204.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="ساعت" textAlignment="JUSTIFY" />
       <Text layoutX="567.0" layoutY="300.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="روز" textAlignment="RIGHT" />
-      <ListView fx:id="theStudentsNamesList" layoutX="85.0" layoutY="164.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="300.0" prefWidth="200.0" />
+      <ListView fx:id="theStudentsNamesList" layoutX="85.0" layoutY="164.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="300.0" prefWidth="200.0" style="-fx-border-color: #575656;" />
       <Text fx:id="theUnit" layoutX="373.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تعداد واحد" textAlignment="RIGHT" visible="false" />
       <Text fx:id="theCapacity" layoutX="373.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ظرفیت" textAlignment="RIGHT" visible="false" />
       <Text fx:id="wrongClass" fill="#d50c0c" layoutX="361.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="شما درسی با این اسم را ارائه نمیدهید!" visible="false" />
@@ -47,7 +47,7 @@
             <CheckBox fx:id="fifthDayCheckBox" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="63.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#selectDay" text="چهار شنبه" textAlignment="RIGHT" />
          </children>
       </VBox>
-      <ListView fx:id="theCoursesList" layoutX="638.0" layoutY="164.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="300.0" prefWidth="200.0" />
+      <ListView fx:id="theCoursesList" layoutX="638.0" layoutY="164.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="300.0" prefWidth="200.0" style="-fx-border-color: #575656;" />
       <Text layoutX="688.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="کلاس های ارائه شده" textAlignment="RIGHT" />
       <Text layoutX="135.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="دانشجویان این کلاس" textAlignment="RIGHT" />
    </children>

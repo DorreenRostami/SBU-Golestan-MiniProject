@@ -76,5 +76,15 @@
       <Text layoutX="133.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="موجودی حساب شما:" textAlignment="RIGHT" />
       <Text fx:id="theBalance" layoutX="133.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="خود موجودی" visible="false" />
       <Text fx:id="notEnoughLabel" fill="#d50c0c" layoutX="581.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" text="موجودی شما کافی نیست!" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="shanbeText" layoutX="455.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="غذا رزرو شده شما برای این روز:" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="seshanbeFood" layoutX="336.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="yekshanbeText" layoutX="455.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="غذا رزرو شده شما برای این روز:" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="shanbeFood" layoutX="336.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="doshanbeText" layoutX="455.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="غذا رزرو شده شما برای این روز:" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="yekshanbeFood" layoutX="336.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="seshanbeText" layoutX="455.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="غذا رزرو شده شما برای این روز:" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="doshanbeFood" layoutX="336.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+      <Text fx:id="chaharshanbeText" layoutX="455.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="غذا رزرو شده شما برای این روز:" textAlignment="RIGHT" visible="false" />
+      <Text fx:id="chaharshanbeFood" layoutX="336.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
    </children>
 </AnchorPane>

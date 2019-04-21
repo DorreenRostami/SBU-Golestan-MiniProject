@@ -1,4 +1,6 @@
-package Model;
+package Model.MakingPackage;
+
+import Model.*;
 
 import java.util.List;
 
@@ -18,5 +20,10 @@ public class Make {
     public void makeProfessor(String username, List<Professor> list){
         Professor p = new Professor(username);
         list.add(p);
+    }
+
+    public void makeBook(String title, String author, String publisher, List<Book> list){
+        Book b = new Book(title, author, publisher);
+        list.add(b);
     }
 }

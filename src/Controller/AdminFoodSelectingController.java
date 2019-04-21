@@ -34,63 +34,82 @@ public class AdminFoodSelectingController {
                 switch (i) {
                     case 0:
                         text = shanbeField1.getText();
-                        if(text.length() == 0)
+                        if(text.length() == 0) {
+                            reservedFoodList.add(null);
                             continue outer;
-                        element = Integer.valueOf(text);
+                        }
                         d = Day.shanbe;
                         break;
                     case 1:
                         text = shanbeField2.getText();
-                        if(text.length() == 0)
+                        if(text.length() == 0) {
+                            reservedFoodList.add(null);
                             continue outer;
+                        }
                         d = Day.shanbe;
                         break;
                     case 2:
                         text = yekshanbeField1.getText();
-                        if(text.length() == 0)
+                        if(text.length() == 0) {
+                            reservedFoodList.add(null);
                             continue outer;
+                        }
                         d = Day.yekshanbe;
                         break;
                     case 3:
                         text = yekshanbeField2.getText();
-                        if(text.length() == 0)
+                        if(text.length() == 0) {
+                            reservedFoodList.add(null);
                             continue outer;
+                        }
                         d = Day.yekshanbe;
                         break;
                     case 4:
                         text = doshanbeField1.getText();
-                        if(text.length() == 0)
+                        if(text.length() == 0) {
+                            reservedFoodList.add(null);
                             continue outer;
+                        }
                         d = Day.doshanbe;
                         break;
                     case 5:
                         text = doshanbeField2.getText();
-                        if(text.length() == 0)
+                        if(text.length() == 0) {
+                            reservedFoodList.add(null);
                             continue outer;
+                        }
                         d = Day.doshanbe;
                         break;
                     case 6:
                         text = seshanbeField1.getText();
-                        if(text.length() == 0)
+                        if(text.length() == 0) {
+                            reservedFoodList.add(null);
                             continue outer;
+                        }
                         d = Day.seshanbe;
                         break;
                     case 7:
                         text = seshanbeField2.getText();
-                        if(text.length() == 0)
+                        if(text.length() == 0) {
+                            reservedFoodList.add(null);
                             continue outer;
+                        }
                         d = Day.seshanbe;
                         break;
                     case 8:
                         text = chaharshanbeField1.getText();
-                        if(text.length() == 0)
+                        if(text.length() == 0) {
+                            reservedFoodList.add(null);
                             continue outer;
+                        }
                         d = Day.chaharshanbe;
                         break;
                     case 9:
                         text = chaharshanbeField2.getText();
-                        if(text.length() == 0)
+                        if(text.length() == 0) {
+                            reservedFoodList.add(null);
                             continue outer;
+                        }
                         d = Day.chaharshanbe;
                         break;
                 }

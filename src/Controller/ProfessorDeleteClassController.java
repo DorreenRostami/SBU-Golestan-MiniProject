@@ -162,11 +162,23 @@ public class ProfessorDeleteClassController {
             for (int i = 0; i < studentList.size(); i++) {
                 List<Course> studentsCourses = studentList.get(i).getCOURSES_TAKEN();
                 for (int j = 0; j < studentsCourses.size(); j++) {
-                    Course c = studentsCourses.get(i);
+                    Course c = studentsCourses.get(j);
                     if (c.getName().equals(currCourse.getName()) && c.getProfessor().equals(signedInProfessor.getUsername()) &&
                             c.getStart() == currCourse.getStart() && c.getDay() == currCourse.getDay()) {
-                        studentsCourses.remove(i);
+                        if (studentsCourses.get(j).getGrade() != null){
+                            if (studentList.get(i).getCourseCount() != currCourse.getUnit()) {
+                                float GPA = studentList.get(i).getGPA() * studentList.get(i).getCourseCount();
+                                GPA -= studentsCourses.get(j).getGrade();
+                                GPA /= studentList.get(i).getCourseCount() - currCourse.getUnit();
+                                studentList.get(i).setGPA(GPA);
+                            }
+                            else {
+                                studentList.get(i).setGPA(20);
+                            }
+                        }
+                        studentsCourses.remove(j);
                         studentList.get(i).setCOURSES_TAKEN(studentsCourses);
+                        studentList.get(i).setCourseCount(studentList.get(i).getCourseCount() - currCourse.getUnit());
                         break;
                     }
                 }

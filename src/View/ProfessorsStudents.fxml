@@ -19,7 +19,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <ListView fx:id="studentList" layoutX="450.0" layoutY="203.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="300.0" prefWidth="400.0" />
+      <ListView fx:id="studentList" layoutX="450.0" layoutY="203.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="300.0" prefWidth="400.0" style="-fx-border-color: #575656;" />
       <Text layoutX="612.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="دانشجویان شما" textAlignment="RIGHT" />
       <Text layoutX="268.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="اسم کلاس" textAlignment="RIGHT" />
       <TextField fx:id="classNameTextField" alignment="CENTER_RIGHT" layoutX="95.0" layoutY="151.0" prefWidth="140.0" />

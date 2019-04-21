@@ -11,8 +11,8 @@ import java.util.List;
 
 public class StudentManageClassController {
     private Student signedInStudent = (Student) new SignedInPerson().getPerson();
-    List<Course> studentsCoursesList = signedInStudent.getCOURSES_TAKEN();
-    List<Course> allCoursesList = new CourseFileStream().read();
+    private List<Course> studentsCoursesList = signedInStudent.getCOURSES_TAKEN();
+    private List<Course> allCoursesList = new CourseFileStream().read();
 
     @FXML
     public ListView<String> classesPresentedList, classesTakenList;
@@ -38,7 +38,7 @@ public class StudentManageClassController {
                 case seshanbe: day = "سه شنبه"; break;
                 case chaharshanbe: day = "چهارشنبه"; break;
             }
-            studentsCourses.add((i + 1) + " - " + c.getName() + " " + c.getStart() + " - " + c.getEnd() + " " + day + " - استاد: " + c.getProfessor());
+            studentsCourses.add((i + 1) + " - " + c.getName() + " " + c.getHour() + " " + day + " - استاد: " + c.getProfessor());
         }
         classesTakenList.setItems(studentsCourses);
         for (int i = 0; i < allCoursesList.size(); i++) {
@@ -52,7 +52,7 @@ public class StudentManageClassController {
                 case chaharshanbe: day = "چهارشنبه"; break;
             }
             int cap = c.getCapacity() - c.getSTUDENTS_TAKING_COURSE().size();
-            allCourses.add((i + 1) + " - اسم کلاس: " + c.getName() + " ساعت: " + c.getStart() + " - " + c.getEnd() +
+            allCourses.add((i + 1) + " - اسم کلاس: " + c.getName() + " ساعت: " + c.getHour() +
                     " روز: " + day + " - استاد: " + c.getProfessor() + " - ظرفیت: " + cap);
         }
         classesPresentedList.setItems(allCourses);

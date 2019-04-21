@@ -1,36 +1,18 @@
 package Model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student implements Serializable {
-    private static final long serialVersionUID = 2L;
-    private String username;
-    private String password = "123456";
+public class Student extends User {
     private long balance = 0;
     private float GPA = 20;
     private int courseCount = 0;
     private List<Course> COURSES_TAKEN = new ArrayList<>();
+    private List<Book> RESERVED_BOOKS = new ArrayList<>();
+    private List<Food> RESERVED_FOODS = new ArrayList<>();
 
     public Student(String username){
         this.username = username;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public long getBalance() {
@@ -63,5 +45,21 @@ public class Student implements Serializable {
 
     public void setCOURSES_TAKEN(List<Course> COURSES_TAKEN) {
         this.COURSES_TAKEN = COURSES_TAKEN;
+    }
+
+    public List<Book> getRESERVED_BOOKS() {
+        return RESERVED_BOOKS;
+    }
+
+    public void setRESERVED_BOOKS(List<Book> RESERVED_BOOKS) {
+        this.RESERVED_BOOKS = RESERVED_BOOKS;
+    }
+
+    public List<Food> getRESERVED_FOODS() {
+        return RESERVED_FOODS;
+    }
+
+    public void setRESERVED_FOODS(List<Food> RESERVED_FOODS) {
+        this.RESERVED_FOODS = RESERVED_FOODS;
     }
 }

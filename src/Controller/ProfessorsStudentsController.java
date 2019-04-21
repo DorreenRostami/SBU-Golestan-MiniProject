@@ -47,7 +47,7 @@ public class ProfessorsStudentsController {
             }
             List<String> stc = c.getSTUDENTS_TAKING_COURSE();
             for (String s : stc)
-                courses.add(s + " : " + c.getName() + " " + c.getStart() + " - " + c.getEnd() + " " + day);
+                courses.add(s + " : " + c.getName() + " " + c.getHour() + " " + day);
         }
         studentList.setItems(courses);
     }
@@ -123,10 +123,14 @@ public class ProfessorsStudentsController {
                                     for (Course ct: coursesTaken)
                                         if (ct.getName().equals(classNameTextField.getText())) {
                                             ct.setGrade(grade);
-                                            float GPA = s.getGPA() * s.getCourseCount();
-                                            GPA += grade - 20;
-                                            GPA /= s.getCourseCount();
-                                            s.setGPA(GPA);
+                                            if (s.getCourseCount() != ct.getUnit()) {
+                                                float GPA = s.getGPA() * s.getCourseCount();
+                                                GPA += grade - 20;
+                                                GPA /= s.getCourseCount();
+                                                s.setGPA(GPA);
+                                            }
+                                            else
+                                                s.setGPA(grade);
                                             allStudents.set(i, s);
                                             new StudentFileStream().write(allStudents);
                                             break outer;

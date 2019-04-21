@@ -1,67 +1,104 @@
 package Controller;
 
-import Model.Admin;
-import Model.PageLoader;
-import javafx.event.ActionEvent;
+import Model.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChangeController {
-    @FXML
-    private Button doneButton, backButton;
-    @FXML
-    private TextField oldUserField, newUserField;
-    @FXML
-    private PasswordField oldPassField, newPassField, newPass2Field;
-    @FXML
-    private Label wrongLabel, takenLabel, matchLabel, blackCharLabel, redCharLabel;
+    private SignedInPerson changing = new SignedInPerson();
+    private Admin admin = new AdminFileStream().read();
+    private List<Student> allStudents = new StudentFileStream().read();
+    private List<Professor> allProfessors = new ProfessorFileStream().read();
 
-    public void doneChanging(ActionEvent actionEvent) throws IOException {
-        if(actionEvent.getSource() == doneButton) {
-            Admin admin = new Admin();
-            if (oldUserField.getText().equals(admin.getUsername()) && oldPassField.getText().equals(admin.getPassword()))
+    @FXML
+    public Button doneButton, backButton;
+    @FXML
+    public TextField oldUserField, newUserField;
+    @FXML
+    public PasswordField oldPassField, newPassField, newPass2Field;
+    @FXML
+    public Label wrongLabel, takenLabel, matchLabel, blackCharLabel, redCharLabel;
+
+    public void doneChanging() throws IOException {
+        wrongLabel.setVisible(true);
+        List<User> allUsers = new ArrayList<>(allStudents);
+        allUsers.addAll(allProfessors);
+        allUsers.add(admin);
+
+        for (User u: allUsers) {
+            if (oldUserField.getText().equals(u.getUsername()) && oldPassField.getText().equals(u.getPassword())) {
                 wrongLabel.setVisible(false);
-            else
-                wrongLabel.setVisible(true);
-            if(!wrongLabel.isVisible()) {
-                if (newUserField.getText().length() > 0 && newPassField.getText().length() == 0)
-                    admin.setUsername(newUserField.getText());
-                if (newPassField.getText().length() != 0 && newPassField.getText().length() < 6) {
-                    blackCharLabel.setVisible(false);
-                    redCharLabel.setVisible(true);
-                }
-                else if (newPassField.getText().length() > 5) {
-                    blackCharLabel.setVisible(true);
-                    redCharLabel.setVisible(false);
-                    if (!newPassField.getText().equals(newPass2Field.getText()))
-                        matchLabel.setVisible(true);
-                    else {
-                        matchLabel.setVisible(false);
-                        admin.setPassword(newPassField.getText());
-                        if(newUserField.getText().length() > 0)
-                            admin.setUsername(newUserField.getText());
-                    }
-                }
+                changing.setPerson(u);
+                changeUser();
+                break;
             }
-            if(!wrongLabel.isVisible() && !takenLabel.isVisible() && !matchLabel.isVisible() && !redCharLabel.isVisible())
-                new PageLoader().loadScene("/View/SignIn.fxml");
-            else {
-                if(wrongLabel.isVisible()) {
-                    oldUserField.setText("");
-                    oldPassField.setText("");
-                }
-                newUserField.setText("");
-                newPassField.setText("");
-                newPass2Field.setText("");
+        }
+        if (!wrongLabel.isVisible() && !takenLabel.isVisible() && !matchLabel.isVisible() && !redCharLabel.isVisible()) {
+            if (changing.getPerson() instanceof Admin) {
+                new AdminFileStream().write((Admin) changing.getPerson());
             }
+            else if (changing.getPerson() instanceof Student) {
+                new StudentFileStream().write(allStudents);
+            }
+            else if (changing.getPerson() instanceof Professor) {
+                new ProfessorFileStream().write(allProfessors);
+            }
+            new PageLoader().loadScene("/View/SignIn.fxml");
+        }
+        else {
+            if (wrongLabel.isVisible()) {
+                oldUserField.setText("");
+                oldPassField.setText("");
+            }
+            newUserField.setText("");
+            newPassField.setText("");
+            newPass2Field.setText("");
         }
     }
 
-    public void goToLastPage(ActionEvent actionEvent) throws IOException {
-        if(actionEvent.getSource() == backButton)
-            new PageLoader().loadScene("/View/SignIn.fxml");
+    private void changeUser() {
+        if (newUserField.getText().length() > 0) {
+            User u = changing.getPerson();
+            u.setUsername(newUserField.getText());
+            changing.setPerson(u);
+            if (changing.getPerson().getUsername().equals(oldUserField.getText()))
+                takenLabel.setVisible(true);
+            else
+                takenLabel.setVisible(false);
+        }
+        else
+            takenLabel.setVisible(false);
+        if (newPassField.getText().length() > 0) {
+            if (newPassField.getText().equals(newPass2Field.getText()))
+                matchLabel.setVisible(false);
+            else
+                matchLabel.setVisible(true);
+            if (!matchLabel.isVisible()) {
+                User user = changing.getPerson();
+                user.setPassword(newPassField.getText());
+                changing.setPerson(user);
+                if (user.getPassword().equals(oldPassField.getText())) {
+                    blackCharLabel.setVisible(false);
+                    redCharLabel.setVisible(true);
+                }
+                else {
+                    blackCharLabel.setVisible(true);
+                    redCharLabel.setVisible(false);
+                }
+            }
+        }
+        else {
+            matchLabel.setVisible(false);
+            blackCharLabel.setVisible(true);
+            redCharLabel.setVisible(false);
+        }
+    }
+
+    public void goToLastPage() throws IOException {
+        new PageLoader().loadScene("/View/SignIn.fxml");
     }
 }

@@ -44,7 +44,7 @@ public class AdminsCourseListViewController {
                     break;
             }
             courses.add("اسم کلاس: " + c.getName() + " / واحد: " + c.getUnit() +
-                    " / ساعت: " + c.getStart() + " - " + c.getEnd() + " / روز: " + day + " / استاد: " + c.getProfessor());
+                    " / ساعت: " + c.getHour() + " / روز: " + day + " / استاد: " + c.getProfessor());
         }
         coursesList.setItems(courses);
     }

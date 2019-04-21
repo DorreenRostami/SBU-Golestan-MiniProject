@@ -1,13 +1,13 @@
 package Model;
 
 public class SignedInPerson {
-    private static Object person = null;
+    private static User person = null;
 
-    public void setPerson(Object p){
+    public void setPerson(User p){
         person = p;
     }
 
-    public Object getPerson(){
+    public User getPerson(){
         return person;
     }
 }

@@ -75,7 +75,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextArea editable="false" layoutX="66.0" layoutY="115.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="330.0" prefWidth="200.0" text="1- قورمه سبزی&#10;2- شنینسل&#10;3- قیمه&#10;4- قیمه بادمجان&#10;5- ماکارونی&#10;6- ناگت&#10;7- کباب کوبیده&#10;8- جوجه کباب&#10;9- زرشک پلو مرغ&#10;10- عدس پلو&#10;11- ماهی تن&#10;12- ماهی قزل آلا">
+      <TextArea editable="false" layoutX="66.0" layoutY="115.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="330.0" prefWidth="200.0" style="-fx-border-color: #575656;" text="1- قورمه سبزی&#10;2- شنینسل&#10;3- قیمه&#10;4- قیمه بادمجان&#10;5- ماکارونی&#10;6- ناگت&#10;7- کباب کوبیده&#10;8- جوجه کباب&#10;9- زرشک پلو مرغ&#10;10- عدس پلو&#10;11- ماهی تن&#10;12- ماهی قزل آلا">
          <font>
             <Font size="15.0" />
          </font></TextArea>

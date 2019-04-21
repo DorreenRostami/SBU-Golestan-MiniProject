@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StudentsTimeTableController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="1.0" fill="#c5c4c4" height="50.0" stroke="#575656" strokeType="INSIDE" width="900.0" />
+      <Button fx:id="backButton" layoutX="823.0" layoutY="12.0" mnemonicParsing="false" onAction="#goBackToHomepage" text="Back" />
+      <Text layoutX="661.0" layoutY="29.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="برنامه هفتگی دانشجو">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TableView fx:id="timetable" layoutX="100.0" layoutY="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="700.0" style="-fx-border-color: #575656;">
+        <columns>
+          <TableColumn fx:id="profCol" prefWidth="150.0" text="استاد" />
+          <TableColumn fx:id="nameCol" prefWidth="250.0" text="اسم درس" />
+            <TableColumn fx:id="hourCol" prefWidth="150.0" text="ساعت" />
+            <TableColumn fx:id="dayCol" prefWidth="150.0" text="روز" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

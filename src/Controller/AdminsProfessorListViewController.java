@@ -70,7 +70,7 @@ public class AdminsProfessorListViewController {
                         break;
                 }
                 coursesGiven.add("اسم کلاس: " + c.getName() + " / واحد: " + c.getUnit() +
-                        " / ساعت: " + c.getStart() + " - " + c.getEnd() + " / روز: " + day);
+                        " / ساعت: " + c.getHour() + " / روز: " + day);
                 for (String s : c.getSTUDENTS_TAKING_COURSE())
                     students.add("نام دانشجو: " + s + " / اسم کلاس: " + c.getName());
             }
